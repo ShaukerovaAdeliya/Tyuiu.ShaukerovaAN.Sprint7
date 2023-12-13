@@ -1,7 +1,7 @@
 ﻿
 namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 {
-    partial class Form1
+    partial class FormBase_SAN
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,21 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormBase_SAN
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(998, 534);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Name = "FormBase_SAN";
+            this.Text = "База данных оптовых баз";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

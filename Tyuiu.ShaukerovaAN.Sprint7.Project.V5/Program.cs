@@ -16,7 +16,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormMain_SAN());
         }
     }
 }
