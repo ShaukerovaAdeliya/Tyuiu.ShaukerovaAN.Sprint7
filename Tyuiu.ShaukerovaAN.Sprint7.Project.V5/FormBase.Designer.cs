@@ -29,7 +29,18 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridViewDataBase_SAN = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataBase_SAN)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridViewDataBase_SAN
+            // 
+            this.dataGridViewDataBase_SAN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDataBase_SAN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDataBase_SAN.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewDataBase_SAN.Name = "dataGridViewDataBase_SAN";
+            this.dataGridViewDataBase_SAN.Size = new System.Drawing.Size(998, 534);
+            this.dataGridViewDataBase_SAN.TabIndex = 0;
             // 
             // FormBase_SAN
             // 
@@ -37,13 +48,18 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(998, 534);
+            this.Controls.Add(this.dataGridViewDataBase_SAN);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "FormBase_SAN";
             this.Text = "База данных оптовых баз";
+            this.Load += new System.EventHandler(this.FormBase_SAN_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataBase_SAN)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridViewDataBase_SAN;
     }
 }
