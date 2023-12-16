@@ -16,7 +16,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         {
             InitializeComponent();
         }
-        DataSet ds;
+        ;
         private void FormBase_SAN_Load(object sender, EventArgs e)
         {
            

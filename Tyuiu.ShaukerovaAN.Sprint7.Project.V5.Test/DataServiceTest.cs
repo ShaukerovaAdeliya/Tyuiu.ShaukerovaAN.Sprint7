@@ -9,6 +9,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
