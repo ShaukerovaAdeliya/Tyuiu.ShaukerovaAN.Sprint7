@@ -102,5 +102,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Lib\Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Lib.csproj">
+      <Project>{9d355bbc-1eb4-41dc-94e2-aa1c9e9397d7}</Project>
+      <Name>Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test\Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test.csproj">
+      <Project>{0bc312b8-3b10-4063-b743-3e66254e47b2}</Project>
+      <Name>Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
