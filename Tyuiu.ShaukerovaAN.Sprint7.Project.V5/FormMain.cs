@@ -36,5 +36,21 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             FormAbout_SAN formAbout = new FormAbout_SAN();
             formAbout.ShowDialog();
         }
+
+        private void buttonOProgramme_SAN_Click(object sender, EventArgs e)
+        {
+            FormOProgramme_SAN formOProgramme = new FormOProgramme_SAN();
+            formOProgramme.ShowDialog();
+        }
+
+        private void buttonOProgramme_SAN_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void buttonOProgramme_SAN_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
     }
 }

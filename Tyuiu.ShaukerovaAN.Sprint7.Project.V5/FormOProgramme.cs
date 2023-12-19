@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 {
-    public partial class FormBase_SAN : Form
+    public partial class FormOProgramme_SAN : Form
     {
-        public FormBase_SAN()
+        public FormOProgramme_SAN()
         {
             InitializeComponent();
         }
-        
-        private void FormBase_SAN_Load(object sender, EventArgs e)
+
+        private void buttonClose_SAN_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
         }
     }
 }

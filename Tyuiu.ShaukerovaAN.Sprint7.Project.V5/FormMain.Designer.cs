@@ -34,10 +34,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.panelTop_SAN = new System.Windows.Forms.Panel();
             this.buttonHelp_SAN = new System.Windows.Forms.Button();
             this.panelLeft_SAN = new System.Windows.Forms.Panel();
-            this.splitterPanel_SAN = new System.Windows.Forms.Splitter();
-            this.panelFill_SAN = new System.Windows.Forms.Panel();
-            this.openFileDialogButton_SAN = new System.Windows.Forms.OpenFileDialog();
-            this.toolTipButton_SAN = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxAddProduct_SAN = new System.Windows.Forms.GroupBox();
             this.textBoxPrice_SAN = new System.Windows.Forms.TextBox();
             this.textBoxCompanyName_SAN = new System.Windows.Forms.TextBox();
@@ -53,20 +49,38 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.labelPrice_SAN = new System.Windows.Forms.Label();
             this.labelCompanyName_SAN = new System.Windows.Forms.Label();
             this.labelNameAddProduct_SAN = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.splitterPanel_SAN = new System.Windows.Forms.Splitter();
+            this.panelFill_SAN = new System.Windows.Forms.Panel();
+            this.groupBoxRedact_SAN = new System.Windows.Forms.GroupBox();
+            this.openFileDialogButton_SAN = new System.Windows.Forms.OpenFileDialog();
+            this.toolTipButton_SAN = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonDone_SAN = new System.Windows.Forms.Button();
+            this.labelNameRedact_SAN = new System.Windows.Forms.Label();
+            this.labelPriceRedact_SAN = new System.Windows.Forms.Label();
+            this.buttonRedact_SAN = new System.Windows.Forms.Button();
+            this.textBoxName_SAN = new System.Windows.Forms.TextBox();
+            this.textBoxPriceRedact_SAN = new System.Windows.Forms.TextBox();
+            this.textBoxColichestvoSklad_SAN = new System.Windows.Forms.TextBox();
+            this.labelCountSklad_SAN = new System.Windows.Forms.Label();
+            this.buttonOProgramme_SAN = new System.Windows.Forms.Button();
+            this.comboBoxSearch_SAN = new System.Windows.Forms.ComboBox();
+            this.dataGridViewOutput_SAN = new System.Windows.Forms.DataGridView();
             this.panelTop_SAN.SuspendLayout();
             this.panelLeft_SAN.SuspendLayout();
-            this.panelFill_SAN.SuspendLayout();
             this.groupBoxAddProduct_SAN.SuspendLayout();
+            this.panelFill_SAN.SuspendLayout();
+            this.groupBoxRedact_SAN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput_SAN)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop_SAN
             // 
+            this.panelTop_SAN.Controls.Add(this.buttonOProgramme_SAN);
             this.panelTop_SAN.Controls.Add(this.buttonHelp_SAN);
             this.panelTop_SAN.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop_SAN.Location = new System.Drawing.Point(0, 0);
             this.panelTop_SAN.Name = "panelTop_SAN";
-            this.panelTop_SAN.Size = new System.Drawing.Size(1266, 200);
+            this.panelTop_SAN.Size = new System.Drawing.Size(1271, 103);
             this.panelTop_SAN.TabIndex = 0;
             // 
             // buttonHelp_SAN
@@ -74,9 +88,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.buttonHelp_SAN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonHelp_SAN.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonHelp_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonHelp_SAN.Image")));
-            this.buttonHelp_SAN.Location = new System.Drawing.Point(1161, 12);
+            this.buttonHelp_SAN.Location = new System.Drawing.Point(1183, 12);
             this.buttonHelp_SAN.Name = "buttonHelp_SAN";
-            this.buttonHelp_SAN.Size = new System.Drawing.Size(85, 78);
+            this.buttonHelp_SAN.Size = new System.Drawing.Size(68, 66);
             this.buttonHelp_SAN.TabIndex = 0;
             this.toolTipButton_SAN.SetToolTip(this.buttonHelp_SAN, "Сведение о программе");
             this.buttonHelp_SAN.UseVisualStyleBackColor = false;
@@ -87,41 +101,17 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // panelLeft_SAN
             // 
             this.panelLeft_SAN.BackColor = System.Drawing.SystemColors.Control;
+            this.panelLeft_SAN.Controls.Add(this.groupBoxRedact_SAN);
             this.panelLeft_SAN.Controls.Add(this.groupBoxAddProduct_SAN);
             this.panelLeft_SAN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft_SAN.Location = new System.Drawing.Point(0, 200);
+            this.panelLeft_SAN.Location = new System.Drawing.Point(0, 103);
             this.panelLeft_SAN.Name = "panelLeft_SAN";
-            this.panelLeft_SAN.Size = new System.Drawing.Size(566, 510);
+            this.panelLeft_SAN.Size = new System.Drawing.Size(432, 574);
             this.panelLeft_SAN.TabIndex = 1;
-            // 
-            // splitterPanel_SAN
-            // 
-            this.splitterPanel_SAN.Location = new System.Drawing.Point(566, 200);
-            this.splitterPanel_SAN.Name = "splitterPanel_SAN";
-            this.splitterPanel_SAN.Size = new System.Drawing.Size(8, 510);
-            this.splitterPanel_SAN.TabIndex = 2;
-            this.splitterPanel_SAN.TabStop = false;
-            // 
-            // panelFill_SAN
-            // 
-            this.panelFill_SAN.BackColor = System.Drawing.SystemColors.Control;
-            this.panelFill_SAN.Controls.Add(this.groupBox2);
-            this.panelFill_SAN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFill_SAN.Location = new System.Drawing.Point(574, 200);
-            this.panelFill_SAN.Name = "panelFill_SAN";
-            this.panelFill_SAN.Size = new System.Drawing.Size(692, 510);
-            this.panelFill_SAN.TabIndex = 3;
-            // 
-            // openFileDialogButton_SAN
-            // 
-            this.openFileDialogButton_SAN.FileName = "openFileDialog1";
-            // 
-            // toolTipButton_SAN
-            // 
-            this.toolTipButton_SAN.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // groupBoxAddProduct_SAN
             // 
+            this.groupBoxAddProduct_SAN.Controls.Add(this.buttonDone_SAN);
             this.groupBoxAddProduct_SAN.Controls.Add(this.textBoxPrice_SAN);
             this.groupBoxAddProduct_SAN.Controls.Add(this.textBoxCompanyName_SAN);
             this.groupBoxAddProduct_SAN.Controls.Add(this.textBoxAmountUpak_SAN);
@@ -139,7 +129,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.groupBoxAddProduct_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBoxAddProduct_SAN.Location = new System.Drawing.Point(12, 6);
             this.groupBoxAddProduct_SAN.Name = "groupBoxAddProduct_SAN";
-            this.groupBoxAddProduct_SAN.Size = new System.Drawing.Size(401, 288);
+            this.groupBoxAddProduct_SAN.Size = new System.Drawing.Size(409, 347);
             this.groupBoxAddProduct_SAN.TabIndex = 1;
             this.groupBoxAddProduct_SAN.TabStop = false;
             this.groupBoxAddProduct_SAN.Text = "Добавить  товар";
@@ -256,21 +246,153 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.labelNameAddProduct_SAN.TabIndex = 0;
             this.labelNameAddProduct_SAN.Text = "Название:";
             // 
-            // groupBox2
+            // splitterPanel_SAN
             // 
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(19, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(401, 288);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Редактировать товар";
+            this.splitterPanel_SAN.Location = new System.Drawing.Point(432, 103);
+            this.splitterPanel_SAN.Name = "splitterPanel_SAN";
+            this.splitterPanel_SAN.Size = new System.Drawing.Size(10, 574);
+            this.splitterPanel_SAN.TabIndex = 2;
+            this.splitterPanel_SAN.TabStop = false;
+            // 
+            // panelFill_SAN
+            // 
+            this.panelFill_SAN.BackColor = System.Drawing.SystemColors.Control;
+            this.panelFill_SAN.Controls.Add(this.dataGridViewOutput_SAN);
+            this.panelFill_SAN.Controls.Add(this.comboBoxSearch_SAN);
+            this.panelFill_SAN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFill_SAN.Location = new System.Drawing.Point(442, 103);
+            this.panelFill_SAN.Name = "panelFill_SAN";
+            this.panelFill_SAN.Size = new System.Drawing.Size(829, 574);
+            this.panelFill_SAN.TabIndex = 3;
+            // 
+            // groupBoxRedact_SAN
+            // 
+            this.groupBoxRedact_SAN.Controls.Add(this.labelCountSklad_SAN);
+            this.groupBoxRedact_SAN.Controls.Add(this.textBoxColichestvoSklad_SAN);
+            this.groupBoxRedact_SAN.Controls.Add(this.textBoxPriceRedact_SAN);
+            this.groupBoxRedact_SAN.Controls.Add(this.textBoxName_SAN);
+            this.groupBoxRedact_SAN.Controls.Add(this.buttonRedact_SAN);
+            this.groupBoxRedact_SAN.Controls.Add(this.labelPriceRedact_SAN);
+            this.groupBoxRedact_SAN.Controls.Add(this.labelNameRedact_SAN);
+            this.groupBoxRedact_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxRedact_SAN.Location = new System.Drawing.Point(12, 371);
+            this.groupBoxRedact_SAN.Name = "groupBoxRedact_SAN";
+            this.groupBoxRedact_SAN.Size = new System.Drawing.Size(409, 189);
+            this.groupBoxRedact_SAN.TabIndex = 2;
+            this.groupBoxRedact_SAN.TabStop = false;
+            this.groupBoxRedact_SAN.Text = "Редактировать товар";
+            // 
+            // openFileDialogButton_SAN
+            // 
+            this.openFileDialogButton_SAN.FileName = "openFileDialog1";
+            // 
+            // toolTipButton_SAN
+            // 
+            this.toolTipButton_SAN.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // buttonDone_SAN
+            // 
+            this.buttonDone_SAN.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonDone_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonDone_SAN.Image")));
+            this.buttonDone_SAN.Location = new System.Drawing.Point(321, 291);
+            this.buttonDone_SAN.Name = "buttonDone_SAN";
+            this.buttonDone_SAN.Size = new System.Drawing.Size(74, 50);
+            this.buttonDone_SAN.TabIndex = 14;
+            this.toolTipButton_SAN.SetToolTip(this.buttonDone_SAN, "Сохранить данные о товаре в таблице");
+            this.buttonDone_SAN.UseVisualStyleBackColor = false;
+            // 
+            // labelNameRedact_SAN
+            // 
+            this.labelNameRedact_SAN.AutoSize = true;
+            this.labelNameRedact_SAN.Location = new System.Drawing.Point(6, 29);
+            this.labelNameRedact_SAN.Name = "labelNameRedact_SAN";
+            this.labelNameRedact_SAN.Size = new System.Drawing.Size(79, 18);
+            this.labelNameRedact_SAN.TabIndex = 0;
+            this.labelNameRedact_SAN.Text = "Название:";
+            // 
+            // labelPriceRedact_SAN
+            // 
+            this.labelPriceRedact_SAN.AutoSize = true;
+            this.labelPriceRedact_SAN.Location = new System.Drawing.Point(6, 66);
+            this.labelPriceRedact_SAN.Name = "labelPriceRedact_SAN";
+            this.labelPriceRedact_SAN.Size = new System.Drawing.Size(47, 18);
+            this.labelPriceRedact_SAN.TabIndex = 1;
+            this.labelPriceRedact_SAN.Text = "Цена:";
+            // 
+            // buttonRedact_SAN
+            // 
+            this.buttonRedact_SAN.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonRedact_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonRedact_SAN.Image")));
+            this.buttonRedact_SAN.Location = new System.Drawing.Point(321, 128);
+            this.buttonRedact_SAN.Name = "buttonRedact_SAN";
+            this.buttonRedact_SAN.Size = new System.Drawing.Size(74, 55);
+            this.buttonRedact_SAN.TabIndex = 2;
+            this.buttonRedact_SAN.UseVisualStyleBackColor = false;
+            // 
+            // textBoxName_SAN
+            // 
+            this.textBoxName_SAN.Location = new System.Drawing.Point(190, 26);
+            this.textBoxName_SAN.Name = "textBoxName_SAN";
+            this.textBoxName_SAN.Size = new System.Drawing.Size(205, 24);
+            this.textBoxName_SAN.TabIndex = 3;
+            // 
+            // textBoxPriceRedact_SAN
+            // 
+            this.textBoxPriceRedact_SAN.Location = new System.Drawing.Point(190, 60);
+            this.textBoxPriceRedact_SAN.Name = "textBoxPriceRedact_SAN";
+            this.textBoxPriceRedact_SAN.Size = new System.Drawing.Size(205, 24);
+            this.textBoxPriceRedact_SAN.TabIndex = 4;
+            // 
+            // textBoxColichestvoSklad_SAN
+            // 
+            this.textBoxColichestvoSklad_SAN.Location = new System.Drawing.Point(190, 98);
+            this.textBoxColichestvoSklad_SAN.Name = "textBoxColichestvoSklad_SAN";
+            this.textBoxColichestvoSklad_SAN.Size = new System.Drawing.Size(205, 24);
+            this.textBoxColichestvoSklad_SAN.TabIndex = 5;
+            // 
+            // labelCountSklad_SAN
+            // 
+            this.labelCountSklad_SAN.AutoSize = true;
+            this.labelCountSklad_SAN.Location = new System.Drawing.Point(6, 101);
+            this.labelCountSklad_SAN.Name = "labelCountSklad_SAN";
+            this.labelCountSklad_SAN.Size = new System.Drawing.Size(170, 18);
+            this.labelCountSklad_SAN.TabIndex = 7;
+            this.labelCountSklad_SAN.Text = "Количество на складе:";
+            // 
+            // buttonOProgramme_SAN
+            // 
+            this.buttonOProgramme_SAN.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonOProgramme_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonOProgramme_SAN.Image")));
+            this.buttonOProgramme_SAN.Location = new System.Drawing.Point(1097, 12);
+            this.buttonOProgramme_SAN.Name = "buttonOProgramme_SAN";
+            this.buttonOProgramme_SAN.Size = new System.Drawing.Size(69, 66);
+            this.buttonOProgramme_SAN.TabIndex = 1;
+            this.buttonOProgramme_SAN.UseVisualStyleBackColor = false;
+            this.buttonOProgramme_SAN.Click += new System.EventHandler(this.buttonOProgramme_SAN_Click);
+            this.buttonOProgramme_SAN.MouseEnter += new System.EventHandler(this.buttonOProgramme_SAN_MouseEnter);
+            this.buttonOProgramme_SAN.MouseLeave += new System.EventHandler(this.buttonOProgramme_SAN_MouseLeave);
+            // 
+            // comboBoxSearch_SAN
+            // 
+            this.comboBoxSearch_SAN.FormattingEnabled = true;
+            this.comboBoxSearch_SAN.Location = new System.Drawing.Point(20, 6);
+            this.comboBoxSearch_SAN.Name = "comboBoxSearch_SAN";
+            this.comboBoxSearch_SAN.Size = new System.Drawing.Size(797, 21);
+            this.comboBoxSearch_SAN.TabIndex = 0;
+            // 
+            // dataGridViewOutput_SAN
+            // 
+            this.dataGridViewOutput_SAN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOutput_SAN.Location = new System.Drawing.Point(20, 48);
+            this.dataGridViewOutput_SAN.Name = "dataGridViewOutput_SAN";
+            this.dataGridViewOutput_SAN.Size = new System.Drawing.Size(797, 512);
+            this.dataGridViewOutput_SAN.TabIndex = 1;
             // 
             // FormMain_SAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 710);
+            this.ClientSize = new System.Drawing.Size(1271, 677);
             this.Controls.Add(this.panelFill_SAN);
             this.Controls.Add(this.splitterPanel_SAN);
             this.Controls.Add(this.panelLeft_SAN);
@@ -280,9 +402,12 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.Text = "Оптовая база";
             this.panelTop_SAN.ResumeLayout(false);
             this.panelLeft_SAN.ResumeLayout(false);
-            this.panelFill_SAN.ResumeLayout(false);
             this.groupBoxAddProduct_SAN.ResumeLayout(false);
             this.groupBoxAddProduct_SAN.PerformLayout();
+            this.panelFill_SAN.ResumeLayout(false);
+            this.groupBoxRedact_SAN.ResumeLayout(false);
+            this.groupBoxRedact_SAN.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput_SAN)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,7 +436,18 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private System.Windows.Forms.Label labelPrice_SAN;
         private System.Windows.Forms.Label labelCompanyName_SAN;
         private System.Windows.Forms.Label labelNameAddProduct_SAN;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxRedact_SAN;
+        private System.Windows.Forms.Button buttonDone_SAN;
+        private System.Windows.Forms.TextBox textBoxColichestvoSklad_SAN;
+        private System.Windows.Forms.TextBox textBoxPriceRedact_SAN;
+        private System.Windows.Forms.TextBox textBoxName_SAN;
+        private System.Windows.Forms.Button buttonRedact_SAN;
+        private System.Windows.Forms.Label labelPriceRedact_SAN;
+        private System.Windows.Forms.Label labelNameRedact_SAN;
+        private System.Windows.Forms.Label labelCountSklad_SAN;
+        private System.Windows.Forms.Button buttonOProgramme_SAN;
+        private System.Windows.Forms.DataGridView dataGridViewOutput_SAN;
+        private System.Windows.Forms.ComboBox comboBoxSearch_SAN;
     }
 }
 
