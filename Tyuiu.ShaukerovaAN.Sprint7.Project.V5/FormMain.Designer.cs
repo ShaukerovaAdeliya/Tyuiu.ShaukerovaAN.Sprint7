@@ -36,6 +36,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.buttonOProgramme_SAN = new System.Windows.Forms.Button();
             this.buttonHelp_SAN = new System.Windows.Forms.Button();
             this.panelLeft_SAN = new System.Windows.Forms.Panel();
+            this.groupBoxFilter_SAN = new System.Windows.Forms.GroupBox();
+            this.buttonFilter_SAN = new System.Windows.Forms.Button();
+            this.comboBoxFilter_SAN = new System.Windows.Forms.ComboBox();
             this.splitterPanel_SAN = new System.Windows.Forms.Splitter();
             this.panelFill_SAN = new System.Windows.Forms.Panel();
             this.buttonDeleteRow_SAN = new System.Windows.Forms.Button();
@@ -47,6 +50,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.toolTipButton_SAN = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialogMain_SAN = new System.Windows.Forms.SaveFileDialog();
             this.panelTop_SAN.SuspendLayout();
+            this.panelLeft_SAN.SuspendLayout();
+            this.groupBoxFilter_SAN.SuspendLayout();
             this.panelFill_SAN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).BeginInit();
             this.SuspendLayout();
@@ -105,11 +110,46 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // panelLeft_SAN
             // 
             this.panelLeft_SAN.BackColor = System.Drawing.SystemColors.Control;
+            this.panelLeft_SAN.Controls.Add(this.groupBoxFilter_SAN);
             this.panelLeft_SAN.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft_SAN.Location = new System.Drawing.Point(0, 103);
             this.panelLeft_SAN.Name = "panelLeft_SAN";
             this.panelLeft_SAN.Size = new System.Drawing.Size(440, 574);
             this.panelLeft_SAN.TabIndex = 1;
+            // 
+            // groupBoxFilter_SAN
+            // 
+            this.groupBoxFilter_SAN.Controls.Add(this.buttonFilter_SAN);
+            this.groupBoxFilter_SAN.Controls.Add(this.comboBoxFilter_SAN);
+            this.groupBoxFilter_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxFilter_SAN.Location = new System.Drawing.Point(12, 83);
+            this.groupBoxFilter_SAN.Name = "groupBoxFilter_SAN";
+            this.groupBoxFilter_SAN.Size = new System.Drawing.Size(221, 107);
+            this.groupBoxFilter_SAN.TabIndex = 0;
+            this.groupBoxFilter_SAN.TabStop = false;
+            this.groupBoxFilter_SAN.Text = "Сортировка";
+            // 
+            // buttonFilter_SAN
+            // 
+            this.buttonFilter_SAN.Location = new System.Drawing.Point(93, 69);
+            this.buttonFilter_SAN.Name = "buttonFilter_SAN";
+            this.buttonFilter_SAN.Size = new System.Drawing.Size(122, 32);
+            this.buttonFilter_SAN.TabIndex = 1;
+            this.buttonFilter_SAN.Text = "Сортировать";
+            this.buttonFilter_SAN.UseVisualStyleBackColor = true;
+            this.buttonFilter_SAN.Click += new System.EventHandler(this.buttonFilter_SAN_Click);
+            // 
+            // comboBoxFilter_SAN
+            // 
+            this.comboBoxFilter_SAN.Items.AddRange(new object[] {
+            "По алфавиту",
+            "По артикулу",
+            "По отделу"});
+            this.comboBoxFilter_SAN.Location = new System.Drawing.Point(6, 23);
+            this.comboBoxFilter_SAN.Name = "comboBoxFilter_SAN";
+            this.comboBoxFilter_SAN.Size = new System.Drawing.Size(151, 26);
+            this.comboBoxFilter_SAN.TabIndex = 2;
+            this.comboBoxFilter_SAN.Text = "Сортировать по:";
             // 
             // splitterPanel_SAN
             // 
@@ -150,7 +190,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // 
             this.dataGridViewMatrix_SAN.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewMatrix_SAN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMatrix_SAN.Location = new System.Drawing.Point(6, 83);
+            this.dataGridViewMatrix_SAN.Location = new System.Drawing.Point(14, 83);
             this.dataGridViewMatrix_SAN.Name = "dataGridViewMatrix_SAN";
             this.dataGridViewMatrix_SAN.RowHeadersVisible = false;
             this.dataGridViewMatrix_SAN.Size = new System.Drawing.Size(795, 479);
@@ -219,6 +259,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.Text = "Оптовая база";
             this.panelTop_SAN.ResumeLayout(false);
             this.panelTop_SAN.PerformLayout();
+            this.panelLeft_SAN.ResumeLayout(false);
+            this.groupBoxFilter_SAN.ResumeLayout(false);
             this.panelFill_SAN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).EndInit();
             this.ResumeLayout(false);
@@ -242,6 +284,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private System.Windows.Forms.DataGridView dataGridViewMatrix_SAN;
         private System.Windows.Forms.SaveFileDialog saveFileDialogMain_SAN;
         private System.Windows.Forms.Button buttonDeleteRow_SAN;
+        private System.Windows.Forms.GroupBox groupBoxFilter_SAN;
+        private System.Windows.Forms.ComboBox comboBoxFilter_SAN;
+        private System.Windows.Forms.Button buttonFilter_SAN;
     }
 }
 
