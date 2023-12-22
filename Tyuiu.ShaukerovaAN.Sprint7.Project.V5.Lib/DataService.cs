@@ -30,5 +30,42 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Lib
             }
             return matrix;
         }
+
+        public int Summ(string path, int cost)
+        {
+            string data = File.ReadAllText(path);
+            data = data.Replace('\n', '\r');
+            string[] lines = data.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            int rows = lines.Length;
+            int coll = lines[7].Split(';').Length;
+            string[,] mtr = new string[rows, coll];
+            for (int i = 0; i < rows; i++)
+            {
+                string[] strok = lines[i].Split(';');
+                for (int j = 0; j < coll; j++)
+                {
+                    mtr[i, j] = strok[j];
+                }
+            }
+
+            int[] ln1 = new int[rows];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < coll; j++)
+                {
+                    if ((j == cost) && (i > 0))
+                    {
+                        ln1[i] = Convert.ToInt32(mtr[i, j]);
+                    }
+                }
+            }
+
+            int res = 0;
+            for (int i = 0; i < ln1.Length; i++)
+            {
+                res += ln1[i];
+            }
+            return res;
+        }
     }
 }
