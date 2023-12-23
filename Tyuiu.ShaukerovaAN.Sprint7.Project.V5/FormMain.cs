@@ -56,10 +56,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 buttonAddRow_SAN.Enabled = true;
                 buttonDeleteRow_SAN.Enabled = true;
 
-                for (int i = 1; i < matrix.GetLength(0) - 1; i++)
-                {
-                    comboBoxName_SAN.Items.Add(matrix[i, 2]);
-                }
+               
             }
             catch
             {
@@ -254,14 +251,23 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 string selectedItem = comboBoxSort_SAN.SelectedItem.ToString();
                 foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
                 {
-                    int cellValue;
-                    if (row.Cells[columnIndex].Value != null && int.TryParse(row.Cells[columnIndex].Value.ToString(), out cellValue))
+                    double cellValue;
+                    if (row.Cells[columnIndex].Value != null && double.TryParse(row.Cells[columnIndex].Value.ToString(), out cellValue))
                     {
                         row.Cells[columnIndex].Value = cellValue;
                     }
                 }
                 try
                 {
+
+                    string[,] matrix = ds.LoadFromDataFile(openFilePath);
+
+                    rows = matrix.GetLength(0);
+                    columns = matrix.GetLength(1);
+
+                    dataGridViewMatrix_SAN.RowCount = rows + 1;
+                    dataGridViewMatrix_SAN.ColumnCount = columns;
+
                     DataGridViewColumn column = dataGridViewMatrix_SAN.Columns[7];
 
                     if (selectedItem == "Дороже")
@@ -272,6 +278,16 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                     {
                         dataGridViewMatrix_SAN.Sort(column, ListSortDirection.Descending);
                     }
+                    if (selectedItem == "Сбросить сортировку")
+                    {
+                        for (int i = 0; i < rows; i++)
+                        {
+                            for (int j = 0; j < columns; j++)
+                            {
+                                dataGridViewMatrix_SAN.Rows[i].Cells[j].Value = matrix[i, j];
+                            }
+                        }
+                    }
                 }
                 catch
                 {
@@ -279,24 +295,31 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 }
             }
         }
-
-
         private void comboBoxArticule_SAN_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxSort_SAN.SelectedItem != null)
+            if (comboBoxArticule_SAN.SelectedItem != null)
             {
                 int columnIndex = 0;
-                string selectedItem = comboBoxSort_SAN.SelectedItem.ToString();
+                string selectedItem = comboBoxArticule_SAN.SelectedItem.ToString();
                 foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
                 {
-                    int cellValue;
-                    if (row.Cells[columnIndex].Value != null && int.TryParse(row.Cells[columnIndex].Value.ToString(), out cellValue))
+                    double cellValue;
+                    if (row.Cells[columnIndex].Value != null && double.TryParse(row.Cells[columnIndex].Value.ToString(), out cellValue))
                     {
                         row.Cells[columnIndex].Value = cellValue;
                     }
                 }
                 try
                 {
+
+                    string[,] matrix = ds.LoadFromDataFile(openFilePath);
+
+                    rows = matrix.GetLength(0);
+                    columns = matrix.GetLength(1);
+
+                    dataGridViewMatrix_SAN.RowCount = rows + 1;
+                    dataGridViewMatrix_SAN.ColumnCount = columns;
+
                     DataGridViewColumn column = dataGridViewMatrix_SAN.Columns[0];
 
                     if (selectedItem == "По возрастанию")
@@ -307,6 +330,16 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                     {
                         dataGridViewMatrix_SAN.Sort(column, ListSortDirection.Descending);
                     }
+                    if (selectedItem == "Сбросить сортировку")
+                    {
+                        for (int i = 0; i < rows; i++)
+                        {
+                            for (int j = 0; j < columns; j++)
+                            {
+                                dataGridViewMatrix_SAN.Rows[i].Cells[j].Value = matrix[i, j];
+                            }
+                        }
+                    }
                 }
                 catch
                 {
@@ -314,7 +347,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 }
             }
         }
-
         private void buttonSum_SAN_Click(object sender, EventArgs e)
         {
             int sum = 0;
@@ -337,22 +369,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         }
         private void textBoxPoiskName_SAN_TextChanged(object sender, EventArgs e)
         {
-            string searchText = textBoxPoiskName_SAN.Text.ToLower(); //приведение к нижнему регистру
-            foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
-            {
-                if (row.Cells["name_SAN"].Value != null)
-                {
-                    string column2Text = row.Cells["name_SAN"].Value.ToString().ToLower();
-                    if (column2Text.Contains(searchText))
-                        {
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
-                    }
-                }
-            }
+
         }
         private void textBoxPoiskPostavshik_SAN_TextChanged(object sender, EventArgs e)
         {
@@ -413,10 +430,59 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 
         private void buttonAddChart_SAN_Click(object sender, EventArgs e)
         {
-            chart_SAN.Series[0].Points.AddXY(Convert.ToDouble(textBoxBUG.Text, ));
-            chart_SAN.Series[1].Points.AddXY(Convert.ToDouble(textBoxGEOLOG.Text));
-            chart_SAN.Series[2].Points.AddXY(Convert.ToDouble(textBoxSECR.Text));
-            chart_SAN.Series[3].Points.AddXY(Convert.ToDouble(textBoxMENEDG.Text));
+            chart_SAN.Series[0].Points.Clear();
+            chart_SAN.Series[1].Points.Clear();
+            //chart_SAN.Series[2].Points.Clear();
+            chart_SAN.Titles.Add("Количество на складе, шт.");
+            chart_SAN.ChartAreas[0].AxisX.Title = "Товар";
+            chart_SAN.ChartAreas[0].AxisY.Title = "Количество";
+
+            for (int i = 0; i < dataGridViewMatrix_SAN.RowCount - 1; i++)
+            {
+                chart_SAN.Series[1].Points.AddXY(i+1 , dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
+            }
+
+            //chart_SAN.Series[0].Points.AddXY(Convert.ToDouble(textBoxBUG.Text, ));
+            //chart_SAN.Series[1].Points.AddXY(Convert.ToDouble(textBoxGEOLOG.Text));
+            //chart_SAN.Series[2].Points.AddXY(Convert.ToDouble(textBoxSECR.Text));
+            //chart_SAN.Series[3].Points.AddXY(Convert.ToDouble(textBoxMENEDG.Text));
+
+                //for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; i++)
+                //{
+                //int x = Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
+                //int y = Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[4].Value);
+                //chart_SAN.Series[0].Points.AddXY(x, y);
+
+                //}
+        }
+        private void buttonSum_SAN_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void buttonSum_SAN_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void buttonSumPrice_SAN_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void buttonSumPrice_SAN_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void buttonDone_SAN_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void buttonDone_SAN_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }
