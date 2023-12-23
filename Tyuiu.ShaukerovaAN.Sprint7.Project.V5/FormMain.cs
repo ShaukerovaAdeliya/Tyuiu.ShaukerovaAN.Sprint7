@@ -21,25 +21,49 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         {
             InitializeComponent();
         }
-
+        static int rows;
+        static int columns;
+        static string openFilePath;
         DataService ds = new DataService();
         
         
         private void buttonOpenFile_SAN_Click(object sender, EventArgs e)
         {
-            // задаем столбцы
-            dataGridViewMatrix_SAN.ColumnCount = 8;
-
-            // выгружаем данные из цсв файла
-            using (var reader = new StreamReader("base.csv"))
+            try
             {
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    var values = line.Split(';'); // празделитель это точка с запятой
+                openFileDialogButton_SAN.ShowDialog();
+                openFilePath = openFileDialogButton_SAN.FileName;
 
-                    dataGridViewMatrix_SAN.Rows.Add(values);
+                string[,] matrix = ds.LoadFromDataFile(openFilePath);
+
+                rows = matrix.GetLength(0);
+                columns = matrix.GetLength(1);
+
+                dataGridViewMatrix_SAN.RowCount = rows + 1;
+                dataGridViewMatrix_SAN.ColumnCount = columns;
+
+                //добавление данных
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        dataGridViewMatrix_SAN.Rows[i].Cells[j].Value = matrix[i, j];
+                    }
                 }
+                dataGridViewMatrix_SAN.AutoResizeColumns();
+                dataGridViewMatrix_SAN.ScrollBars = ScrollBars.Both;
+                buttonSaveFile_SAN.Enabled = true;
+                buttonAddRow_SAN.Enabled = true;
+                buttonDeleteRow_SAN.Enabled = true;
+
+                for (int i = 1; i < matrix.GetLength(0) - 1; i++)
+                {
+                    comboBoxName_SAN.Items.Add(matrix[i, 2]);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -82,14 +106,27 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 
         private void buttonAddRow_SAN_Click(object sender, EventArgs e)
         {
-            try
-            {
-                dataGridViewMatrix_SAN.Rows.Add();
-            }
-            catch
-            {
-                MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            string Articule_SAN = textBoxArticuleAdd_SAN.Text;
+            string otdel_SAN = textBoxOtdelAdd_SAN.Text;
+            string name_SAN = textBoxNameAdd_SAN.Text;
+            string CountSklad_SAN = textBoxCountSkadAdd_SAN.Text;
+            string CountUpakovka_SAN = textBoxCountUpaAdd_SAN.Text;
+            string CountUpakovok_SAN = textBoxCountUpakovokadd_SAN.Text;
+            string postavshik_SAN = textBoxPostavshikAdd_SAN.Text;
+            string price_SAN = textBoxPriceAdd_SAN.Text;
+            
+
+            // заполнение
+            dataGridViewMatrix_SAN.Rows.Add(Articule_SAN, otdel_SAN, name_SAN, CountSklad_SAN, CountUpakovka_SAN, CountUpakovok_SAN, postavshik_SAN, price_SAN);
+            textBoxArticuleAdd_SAN.Text = "";
+            textBoxOtdelAdd_SAN.Text = "";
+            textBoxNameAdd_SAN.Text = "";
+            textBoxCountSkadAdd_SAN.Text = "";
+            textBoxCountUpaAdd_SAN.Text = "";
+            textBoxCountUpakovokadd_SAN.Text = "";
+            textBoxPostavshikAdd_SAN.Text = "";
+            textBoxPriceAdd_SAN.Text = "";
+            dataGridViewMatrix_SAN.CurrentCell = dataGridViewMatrix_SAN.Rows[dataGridViewMatrix_SAN.Rows.Count - 1].Cells[0];
         }
 
         private void buttonDeleteRow_SAN_Click(object sender, EventArgs e)
@@ -288,29 +325,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             textBoxSum_SAN.Text = sum.ToString();
         }
 
-        private void buttonFloat_SAN_Click(object sender, EventArgs e)
-        {
-            //int sr = 0;
-            //for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; i++)
-            //{
-            //sr += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
-            //sr = (sr / dataGridViewMatrix_SAN.RowCount);
-            //}
-            //textBoxfloat_SAN.Text = sr.ToString();
-            int sum = 0;
-            for (int i = 0; i < dataGridViewMatrix_SAN.RowCount-1; i++) //-1 нужен, если AlloyUserToAddRows=true
-            {                
-                //for (int j = 0; j < dataGridViewMatrix_SAN.Rows[i].Cells.Count; j++)
-                {
-                    sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[7].Value);
-                }
-                double mid = sum / dataGridViewMatrix_SAN.Rows[i].Cells.Count;
-                textBoxfloat_SAN.Text = mid.ToString();
-            }
-
-
-        }
-
         private void buttonSumPrice_SAN_Click(object sender, EventArgs e)
         {
             int sum = 0;
@@ -321,22 +335,34 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             textBoxSumPrice_SAN.Text = sum.ToString();
     
         }
-
-
-
-
-
-        private void textBoxPoisk_SAN_TextChanged(object sender, EventArgs e)
+        private void textBoxPoiskName_SAN_TextChanged(object sender, EventArgs e)
         {
-            string searchText = textBoxPoisk_SAN.Text.ToLower(); //приведение к нижнему регистру
+            string searchText = textBoxPoiskName_SAN.Text.ToLower(); //приведение к нижнему регистру
             foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
             {
-                if (row.Cells["ColumnF"].Value != null && row.Cells["ColumnI"].Value != null)
+                if (row.Cells["name_SAN"].Value != null)
                 {
-                    string column2Text = row.Cells["ColumnF"].Value.ToString().ToLower();
-                    string column3Text = row.Cells["ColumnO"].Value.ToString().ToLower();
-
-                    if (column2Text.Contains(searchText) || column3Text.Contains(searchText))
+                    string column2Text = row.Cells["name_SAN"].Value.ToString().ToLower();
+                    if (column2Text.Contains(searchText))
+                        {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+        private void textBoxPoiskPostavshik_SAN_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBoxPoiskPostavshik_SAN.Text.ToLower(); //приведение к нижнему регистру
+            foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
+            {
+                if (row.Cells["postavshik_SAN"].Value != null)
+                {
+                    string column6Text = row.Cells["postavshik_SAN"].Value.ToString().ToLower();
+                    if (column6Text.Contains(searchText))
                     {
                         row.Visible = true;
                     }
@@ -347,6 +373,50 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 }
             }
         }
-    }
 
+        private void buttonDone_SAN_Click(object sender, EventArgs e)
+        {
+            int rows = dataGridViewMatrix_SAN.RowCount;
+            int columns = dataGridViewMatrix_SAN.ColumnCount;
+            string str;
+            string[,] matrix = new string[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    str = "";
+                    str += dataGridViewMatrix_SAN.Rows[i].Cells[j].Value;
+                    matrix[i, j] = str;
+                }
+
+            }
+
+            int m = 0;
+            int b = 0;
+            int mg = 0;
+            for (int i = 0; i < rows - 1; i++)
+            {
+                if (matrix[i, 1] == "Молоко")
+                {
+                    m++;
+                }
+                if (matrix[i, 1] == "Бакалея")
+                {
+                    b++;
+                }
+                if (matrix[i, 1] == "Мясная гастрономия")
+                {
+                    mg++;
+                }
+            }
+        }
+
+        private void buttonAddChart_SAN_Click(object sender, EventArgs e)
+        {
+            chart_SAN.Series[0].Points.AddXY(Convert.ToDouble(textBoxBUG.Text, ));
+            chart_SAN.Series[1].Points.AddXY(Convert.ToDouble(textBoxGEOLOG.Text));
+            chart_SAN.Series[2].Points.AddXY(Convert.ToDouble(textBoxSECR.Text));
+            chart_SAN.Series[3].Points.AddXY(Convert.ToDouble(textBoxMENEDG.Text));
+        }
+    }
 }
