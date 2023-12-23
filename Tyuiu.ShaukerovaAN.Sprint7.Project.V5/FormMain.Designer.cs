@@ -36,7 +36,18 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.buttonOProgramme_SAN = new System.Windows.Forms.Button();
             this.buttonHelp_SAN = new System.Windows.Forms.Button();
             this.panelLeft_SAN = new System.Windows.Forms.Panel();
+            this.groupBoxElementStatics_SAN = new System.Windows.Forms.GroupBox();
+            this.buttonSumPrice_SAN = new System.Windows.Forms.Button();
+            this.textBoxSumPrice_SAN = new System.Windows.Forms.TextBox();
+            this.labelSumPrice_SAN = new System.Windows.Forms.Label();
+            this.buttonFloat_SAN = new System.Windows.Forms.Button();
+            this.textBoxfloat_SAN = new System.Windows.Forms.TextBox();
+            this.labelfloat_SAN = new System.Windows.Forms.Label();
+            this.buttonSum_SAN = new System.Windows.Forms.Button();
+            this.textBoxSum_SAN = new System.Windows.Forms.TextBox();
+            this.labelSum_SAN = new System.Windows.Forms.Label();
             this.groupBoxFilter_SAN = new System.Windows.Forms.GroupBox();
+            this.comboBoxArticule_SAN = new System.Windows.Forms.ComboBox();
             this.labelArticule_SAN = new System.Windows.Forms.Label();
             this.labelPrice_SAN = new System.Windows.Forms.Label();
             this.labelOtdel_SAN = new System.Windows.Forms.Label();
@@ -60,20 +71,12 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.openFileDialogButton_SAN = new System.Windows.Forms.OpenFileDialog();
             this.toolTipButton_SAN = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialogMain_SAN = new System.Windows.Forms.SaveFileDialog();
-            this.comboBoxArticule_SAN = new System.Windows.Forms.ComboBox();
-            this.groupBoxElementStatics_SAN = new System.Windows.Forms.GroupBox();
-            this.labelSum_SAN = new System.Windows.Forms.Label();
-            this.textBoxSum_SAN = new System.Windows.Forms.TextBox();
-            this.buttonSum_SAN = new System.Windows.Forms.Button();
-            this.labelfloat_SAN = new System.Windows.Forms.Label();
-            this.textBoxfloat_SAN = new System.Windows.Forms.TextBox();
-            this.buttonFloat_SAN = new System.Windows.Forms.Button();
             this.panelTop_SAN.SuspendLayout();
             this.panelLeft_SAN.SuspendLayout();
+            this.groupBoxElementStatics_SAN.SuspendLayout();
             this.groupBoxFilter_SAN.SuspendLayout();
             this.panelFill_SAN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).BeginInit();
-            this.groupBoxElementStatics_SAN.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop_SAN
@@ -138,6 +141,117 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.panelLeft_SAN.Size = new System.Drawing.Size(440, 574);
             this.panelLeft_SAN.TabIndex = 1;
             // 
+            // groupBoxElementStatics_SAN
+            // 
+            this.groupBoxElementStatics_SAN.Controls.Add(this.buttonSumPrice_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.textBoxSumPrice_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.labelSumPrice_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.buttonFloat_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.textBoxfloat_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.labelfloat_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.buttonSum_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.textBoxSum_SAN);
+            this.groupBoxElementStatics_SAN.Controls.Add(this.labelSum_SAN);
+            this.groupBoxElementStatics_SAN.Location = new System.Drawing.Point(12, 179);
+            this.groupBoxElementStatics_SAN.Name = "groupBoxElementStatics_SAN";
+            this.groupBoxElementStatics_SAN.Size = new System.Drawing.Size(379, 383);
+            this.groupBoxElementStatics_SAN.TabIndex = 1;
+            this.groupBoxElementStatics_SAN.TabStop = false;
+            // 
+            // buttonSumPrice_SAN
+            // 
+            this.buttonSumPrice_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSumPrice_SAN.Location = new System.Drawing.Point(245, 321);
+            this.buttonSumPrice_SAN.Name = "buttonSumPrice_SAN";
+            this.buttonSumPrice_SAN.Size = new System.Drawing.Size(99, 27);
+            this.buttonSumPrice_SAN.TabIndex = 8;
+            this.buttonSumPrice_SAN.Text = "Посчитать";
+            this.buttonSumPrice_SAN.UseVisualStyleBackColor = true;
+            this.buttonSumPrice_SAN.Click += new System.EventHandler(this.buttonSumPrice_SAN_Click);
+            // 
+            // textBoxSumPrice_SAN
+            // 
+            this.textBoxSumPrice_SAN.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxSumPrice_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSumPrice_SAN.Location = new System.Drawing.Point(235, 286);
+            this.textBoxSumPrice_SAN.Multiline = true;
+            this.textBoxSumPrice_SAN.Name = "textBoxSumPrice_SAN";
+            this.textBoxSumPrice_SAN.Size = new System.Drawing.Size(121, 29);
+            this.textBoxSumPrice_SAN.TabIndex = 7;
+            // 
+            // labelSumPrice_SAN
+            // 
+            this.labelSumPrice_SAN.AutoSize = true;
+            this.labelSumPrice_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSumPrice_SAN.Location = new System.Drawing.Point(0, 237);
+            this.labelSumPrice_SAN.Name = "labelSumPrice_SAN";
+            this.labelSumPrice_SAN.Size = new System.Drawing.Size(186, 18);
+            this.labelSumPrice_SAN.TabIndex = 6;
+            this.labelSumPrice_SAN.Text = "Стоимость всех товаров:";
+            // 
+            // buttonFloat_SAN
+            // 
+            this.buttonFloat_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFloat_SAN.Location = new System.Drawing.Point(35, 129);
+            this.buttonFloat_SAN.Name = "buttonFloat_SAN";
+            this.buttonFloat_SAN.Size = new System.Drawing.Size(99, 27);
+            this.buttonFloat_SAN.TabIndex = 5;
+            this.buttonFloat_SAN.Text = "Посчитать";
+            this.buttonFloat_SAN.UseVisualStyleBackColor = true;
+            this.buttonFloat_SAN.Click += new System.EventHandler(this.buttonFloat_SAN_Click);
+            // 
+            // textBoxfloat_SAN
+            // 
+            this.textBoxfloat_SAN.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxfloat_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxfloat_SAN.Location = new System.Drawing.Point(235, 94);
+            this.textBoxfloat_SAN.Multiline = true;
+            this.textBoxfloat_SAN.Name = "textBoxfloat_SAN";
+            this.textBoxfloat_SAN.ReadOnly = true;
+            this.textBoxfloat_SAN.Size = new System.Drawing.Size(121, 161);
+            this.textBoxfloat_SAN.TabIndex = 4;
+            // 
+            // labelfloat_SAN
+            // 
+            this.labelfloat_SAN.AutoSize = true;
+            this.labelfloat_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelfloat_SAN.Location = new System.Drawing.Point(6, 97);
+            this.labelfloat_SAN.Name = "labelfloat_SAN";
+            this.labelfloat_SAN.Size = new System.Drawing.Size(196, 18);
+            this.labelfloat_SAN.TabIndex = 3;
+            this.labelfloat_SAN.Text = "Среднее арифмитическое:";
+            // 
+            // buttonSum_SAN
+            // 
+            this.buttonSum_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSum_SAN.Location = new System.Drawing.Point(257, 47);
+            this.buttonSum_SAN.Name = "buttonSum_SAN";
+            this.buttonSum_SAN.Size = new System.Drawing.Size(99, 30);
+            this.buttonSum_SAN.TabIndex = 2;
+            this.buttonSum_SAN.Text = "Посчитать";
+            this.buttonSum_SAN.UseVisualStyleBackColor = true;
+            this.buttonSum_SAN.Click += new System.EventHandler(this.buttonSum_SAN_Click);
+            // 
+            // textBoxSum_SAN
+            // 
+            this.textBoxSum_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSum_SAN.Location = new System.Drawing.Point(235, 13);
+            this.textBoxSum_SAN.Multiline = true;
+            this.textBoxSum_SAN.Name = "textBoxSum_SAN";
+            this.textBoxSum_SAN.ReadOnly = true;
+            this.textBoxSum_SAN.Size = new System.Drawing.Size(121, 28);
+            this.textBoxSum_SAN.TabIndex = 1;
+            // 
+            // labelSum_SAN
+            // 
+            this.labelSum_SAN.AutoSize = true;
+            this.labelSum_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSum_SAN.Location = new System.Drawing.Point(6, 16);
+            this.labelSum_SAN.Name = "labelSum_SAN";
+            this.labelSum_SAN.Size = new System.Drawing.Size(231, 18);
+            this.labelSum_SAN.TabIndex = 0;
+            this.labelSum_SAN.Text = "Количество товаров на складе:";
+            // 
             // groupBoxFilter_SAN
             // 
             this.groupBoxFilter_SAN.Controls.Add(this.comboBoxArticule_SAN);
@@ -153,6 +267,18 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.groupBoxFilter_SAN.TabIndex = 0;
             this.groupBoxFilter_SAN.TabStop = false;
             this.groupBoxFilter_SAN.Text = "Сортировка";
+            // 
+            // comboBoxArticule_SAN
+            // 
+            this.comboBoxArticule_SAN.FormattingEnabled = true;
+            this.comboBoxArticule_SAN.Items.AddRange(new object[] {
+            "По возрастанию",
+            "По убыванию"});
+            this.comboBoxArticule_SAN.Location = new System.Drawing.Point(9, 49);
+            this.comboBoxArticule_SAN.Name = "comboBoxArticule_SAN";
+            this.comboBoxArticule_SAN.Size = new System.Drawing.Size(148, 26);
+            this.comboBoxArticule_SAN.TabIndex = 11;
+            this.comboBoxArticule_SAN.SelectedIndexChanged += new System.EventHandler(this.comboBoxArticule_SAN_SelectedIndexChanged);
             // 
             // labelArticule_SAN
             // 
@@ -216,6 +342,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // panelFill_SAN
             // 
             this.panelFill_SAN.BackColor = System.Drawing.SystemColors.Control;
+            this.panelFill_SAN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFill_SAN.Controls.Add(this.buttonDeleteRow_SAN);
             this.panelFill_SAN.Controls.Add(this.dataGridViewMatrix_SAN);
             this.panelFill_SAN.Controls.Add(this.buttonAddRow_SAN);
@@ -258,7 +385,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.dataGridViewMatrix_SAN.RowHeadersVisible = false;
             this.dataGridViewMatrix_SAN.Size = new System.Drawing.Size(795, 479);
             this.dataGridViewMatrix_SAN.TabIndex = 3;
-            this.dataGridViewMatrix_SAN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMatrix_SAN_CellContentClick);
             // 
             // Articule_SAN
             // 
@@ -359,95 +485,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.toolTipButton_SAN.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipButton_SAN.ToolTipTitle = "Подсказка";
             // 
-            // comboBoxArticule_SAN
-            // 
-            this.comboBoxArticule_SAN.FormattingEnabled = true;
-            this.comboBoxArticule_SAN.Items.AddRange(new object[] {
-            "По возрастанию",
-            "По убыванию"});
-            this.comboBoxArticule_SAN.Location = new System.Drawing.Point(9, 49);
-            this.comboBoxArticule_SAN.Name = "comboBoxArticule_SAN";
-            this.comboBoxArticule_SAN.Size = new System.Drawing.Size(148, 26);
-            this.comboBoxArticule_SAN.TabIndex = 11;
-            this.comboBoxArticule_SAN.SelectedIndexChanged += new System.EventHandler(this.comboBoxArticule_SAN_SelectedIndexChanged);
-            // 
-            // groupBoxElementStatics_SAN
-            // 
-            this.groupBoxElementStatics_SAN.Controls.Add(this.buttonFloat_SAN);
-            this.groupBoxElementStatics_SAN.Controls.Add(this.textBoxfloat_SAN);
-            this.groupBoxElementStatics_SAN.Controls.Add(this.labelfloat_SAN);
-            this.groupBoxElementStatics_SAN.Controls.Add(this.buttonSum_SAN);
-            this.groupBoxElementStatics_SAN.Controls.Add(this.textBoxSum_SAN);
-            this.groupBoxElementStatics_SAN.Controls.Add(this.labelSum_SAN);
-            this.groupBoxElementStatics_SAN.Location = new System.Drawing.Point(12, 179);
-            this.groupBoxElementStatics_SAN.Name = "groupBoxElementStatics_SAN";
-            this.groupBoxElementStatics_SAN.Size = new System.Drawing.Size(379, 236);
-            this.groupBoxElementStatics_SAN.TabIndex = 1;
-            this.groupBoxElementStatics_SAN.TabStop = false;
-            // 
-            // labelSum_SAN
-            // 
-            this.labelSum_SAN.AutoSize = true;
-            this.labelSum_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSum_SAN.Location = new System.Drawing.Point(6, 16);
-            this.labelSum_SAN.Name = "labelSum_SAN";
-            this.labelSum_SAN.Size = new System.Drawing.Size(195, 18);
-            this.labelSum_SAN.TabIndex = 0;
-            this.labelSum_SAN.Text = "Сумма товаров на складе:";
-            // 
-            // textBoxSum_SAN
-            // 
-            this.textBoxSum_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSum_SAN.Location = new System.Drawing.Point(213, 13);
-            this.textBoxSum_SAN.Multiline = true;
-            this.textBoxSum_SAN.Name = "textBoxSum_SAN";
-            this.textBoxSum_SAN.ReadOnly = true;
-            this.textBoxSum_SAN.Size = new System.Drawing.Size(121, 28);
-            this.textBoxSum_SAN.TabIndex = 1;
-            // 
-            // buttonSum_SAN
-            // 
-            this.buttonSum_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSum_SAN.Location = new System.Drawing.Point(235, 47);
-            this.buttonSum_SAN.Name = "buttonSum_SAN";
-            this.buttonSum_SAN.Size = new System.Drawing.Size(99, 30);
-            this.buttonSum_SAN.TabIndex = 2;
-            this.buttonSum_SAN.Text = "Посчитать";
-            this.buttonSum_SAN.UseVisualStyleBackColor = true;
-            this.buttonSum_SAN.Click += new System.EventHandler(this.buttonSum_SAN_Click);
-            // 
-            // labelfloat_SAN
-            // 
-            this.labelfloat_SAN.AutoSize = true;
-            this.labelfloat_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelfloat_SAN.Location = new System.Drawing.Point(6, 97);
-            this.labelfloat_SAN.Name = "labelfloat_SAN";
-            this.labelfloat_SAN.Size = new System.Drawing.Size(196, 18);
-            this.labelfloat_SAN.TabIndex = 3;
-            this.labelfloat_SAN.Text = "Среднее арифмитическое:";
-            // 
-            // textBoxfloat_SAN
-            // 
-            this.textBoxfloat_SAN.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxfloat_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxfloat_SAN.Location = new System.Drawing.Point(213, 94);
-            this.textBoxfloat_SAN.Multiline = true;
-            this.textBoxfloat_SAN.Name = "textBoxfloat_SAN";
-            this.textBoxfloat_SAN.ReadOnly = true;
-            this.textBoxfloat_SAN.Size = new System.Drawing.Size(121, 29);
-            this.textBoxfloat_SAN.TabIndex = 4;
-            // 
-            // buttonFloat_SAN
-            // 
-            this.buttonFloat_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonFloat_SAN.Location = new System.Drawing.Point(235, 129);
-            this.buttonFloat_SAN.Name = "buttonFloat_SAN";
-            this.buttonFloat_SAN.Size = new System.Drawing.Size(99, 27);
-            this.buttonFloat_SAN.TabIndex = 5;
-            this.buttonFloat_SAN.Text = "Посчитать";
-            this.buttonFloat_SAN.UseVisualStyleBackColor = true;
-            this.buttonFloat_SAN.Click += new System.EventHandler(this.buttonFloat_SAN_Click);
-            // 
             // FormMain_SAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,12 +500,12 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.panelTop_SAN.ResumeLayout(false);
             this.panelTop_SAN.PerformLayout();
             this.panelLeft_SAN.ResumeLayout(false);
+            this.groupBoxElementStatics_SAN.ResumeLayout(false);
+            this.groupBoxElementStatics_SAN.PerformLayout();
             this.groupBoxFilter_SAN.ResumeLayout(false);
             this.groupBoxFilter_SAN.PerformLayout();
             this.panelFill_SAN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).EndInit();
-            this.groupBoxElementStatics_SAN.ResumeLayout(false);
-            this.groupBoxElementStatics_SAN.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -512,6 +549,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private System.Windows.Forms.Button buttonFloat_SAN;
         private System.Windows.Forms.TextBox textBoxfloat_SAN;
         private System.Windows.Forms.Label labelfloat_SAN;
+        private System.Windows.Forms.Button buttonSumPrice_SAN;
+        private System.Windows.Forms.TextBox textBoxSumPrice_SAN;
+        private System.Windows.Forms.Label labelSumPrice_SAN;
     }
 }
 

@@ -278,17 +278,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             }
         }
 
-        private void dataGridViewMatrix_SAN_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int sum = 0;
-            for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; ++i)
-            {
-                sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
-            }
-            
-            labelSum_SAN.Text = sum.ToString();
-        }
-
         private void buttonSum_SAN_Click(object sender, EventArgs e)
         {
             int sum = 0;
@@ -301,15 +290,39 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 
         private void buttonFloat_SAN_Click(object sender, EventArgs e)
         {
+            //int sr = 0;
+            //for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; i++)
+            //{
+            //sr += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
+            //sr = (sr / dataGridViewMatrix_SAN.RowCount);
+            //}
+            //textBoxfloat_SAN.Text = sr.ToString();
             int sum = 0;
-            for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count-1; i++)
-            {
-                sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
-                sum = sum / dataGridViewMatrix_SAN.RowCount;
+            for (int i = 0; i < dataGridViewMatrix_SAN.RowCount-1; i++) //-1 нужен, если AlloyUserToAddRows=true
+            {                
+                //for (int j = 0; j < dataGridViewMatrix_SAN.Rows[i].Cells.Count; j++)
+                {
+                    sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[7].Value);
+                }
+                double mid = (double)sum / dataGridViewMatrix_SAN.Rows[i].Cells.Count;
+                textBoxfloat_SAN.Text = mid.ToString();
             }
-            textBoxfloat_SAN.Text = sum.ToString();
+
 
         }
+
+        private void buttonSumPrice_SAN_Click(object sender, EventArgs e)
+        {
+            int sum = 0;
+            for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; ++i)
+            {
+            sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[7].Value);
+            }
+            textBoxSumPrice_SAN.Text = sum.ToString();
+    
+        }
+
+
     }
 
 }
