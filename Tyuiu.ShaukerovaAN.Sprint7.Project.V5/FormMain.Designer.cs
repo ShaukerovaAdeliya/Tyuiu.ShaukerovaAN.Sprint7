@@ -36,6 +36,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.buttonOProgramme_SAN = new System.Windows.Forms.Button();
             this.buttonHelp_SAN = new System.Windows.Forms.Button();
             this.panelLeft_SAN = new System.Windows.Forms.Panel();
+            this.textBoxPoisk_SAN = new System.Windows.Forms.TextBox();
             this.groupBoxElementStatics_SAN = new System.Windows.Forms.GroupBox();
             this.buttonSumPrice_SAN = new System.Windows.Forms.Button();
             this.textBoxSumPrice_SAN = new System.Windows.Forms.TextBox();
@@ -56,6 +57,15 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.splitterPanel_SAN = new System.Windows.Forms.Splitter();
             this.panelFill_SAN = new System.Windows.Forms.Panel();
             this.buttonDeleteRow_SAN = new System.Windows.Forms.Button();
+            this.buttonAddRow_SAN = new System.Windows.Forms.Button();
+            this.buttonSaveFile_SAN = new System.Windows.Forms.Button();
+            this.buttonOpenFile_SAN = new System.Windows.Forms.Button();
+            this.openFileDialogButton_SAN = new System.Windows.Forms.OpenFileDialog();
+            this.toolTipButton_SAN = new System.Windows.Forms.ToolTip(this.components);
+            this.saveFileDialogMain_SAN = new System.Windows.Forms.SaveFileDialog();
+            this.tabControl_SAN = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage = new System.Windows.Forms.TabPage();
             this.dataGridViewMatrix_SAN = new System.Windows.Forms.DataGridView();
             this.Articule_SAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.otdel_SAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,17 +75,13 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.CountUpakovok_SAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postavshik_SAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price_SAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAddRow_SAN = new System.Windows.Forms.Button();
-            this.buttonSaveFile_SAN = new System.Windows.Forms.Button();
-            this.buttonOpenFile_SAN = new System.Windows.Forms.Button();
-            this.openFileDialogButton_SAN = new System.Windows.Forms.OpenFileDialog();
-            this.toolTipButton_SAN = new System.Windows.Forms.ToolTip(this.components);
-            this.saveFileDialogMain_SAN = new System.Windows.Forms.SaveFileDialog();
             this.panelTop_SAN.SuspendLayout();
             this.panelLeft_SAN.SuspendLayout();
             this.groupBoxElementStatics_SAN.SuspendLayout();
             this.groupBoxFilter_SAN.SuspendLayout();
             this.panelFill_SAN.SuspendLayout();
+            this.tabControl_SAN.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,6 +139,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // panelLeft_SAN
             // 
             this.panelLeft_SAN.BackColor = System.Drawing.SystemColors.Control;
+            this.panelLeft_SAN.Controls.Add(this.textBoxPoisk_SAN);
             this.panelLeft_SAN.Controls.Add(this.groupBoxElementStatics_SAN);
             this.panelLeft_SAN.Controls.Add(this.groupBoxFilter_SAN);
             this.panelLeft_SAN.Dock = System.Windows.Forms.DockStyle.Left;
@@ -140,6 +147,15 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.panelLeft_SAN.Name = "panelLeft_SAN";
             this.panelLeft_SAN.Size = new System.Drawing.Size(440, 574);
             this.panelLeft_SAN.TabIndex = 1;
+            // 
+            // textBoxPoisk_SAN
+            // 
+            this.textBoxPoisk_SAN.Location = new System.Drawing.Point(12, 441);
+            this.textBoxPoisk_SAN.Multiline = true;
+            this.textBoxPoisk_SAN.Name = "textBoxPoisk_SAN";
+            this.textBoxPoisk_SAN.Size = new System.Drawing.Size(192, 37);
+            this.textBoxPoisk_SAN.TabIndex = 2;
+            this.textBoxPoisk_SAN.TextChanged += new System.EventHandler(this.textBoxPoisk_SAN_TextChanged);
             // 
             // groupBoxElementStatics_SAN
             // 
@@ -154,14 +170,14 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.groupBoxElementStatics_SAN.Controls.Add(this.labelSum_SAN);
             this.groupBoxElementStatics_SAN.Location = new System.Drawing.Point(12, 179);
             this.groupBoxElementStatics_SAN.Name = "groupBoxElementStatics_SAN";
-            this.groupBoxElementStatics_SAN.Size = new System.Drawing.Size(379, 383);
+            this.groupBoxElementStatics_SAN.Size = new System.Drawing.Size(379, 245);
             this.groupBoxElementStatics_SAN.TabIndex = 1;
             this.groupBoxElementStatics_SAN.TabStop = false;
             // 
             // buttonSumPrice_SAN
             // 
             this.buttonSumPrice_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSumPrice_SAN.Location = new System.Drawing.Point(245, 321);
+            this.buttonSumPrice_SAN.Location = new System.Drawing.Point(257, 199);
             this.buttonSumPrice_SAN.Name = "buttonSumPrice_SAN";
             this.buttonSumPrice_SAN.Size = new System.Drawing.Size(99, 27);
             this.buttonSumPrice_SAN.TabIndex = 8;
@@ -173,7 +189,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // 
             this.textBoxSumPrice_SAN.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBoxSumPrice_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSumPrice_SAN.Location = new System.Drawing.Point(235, 286);
+            this.textBoxSumPrice_SAN.Location = new System.Drawing.Point(235, 164);
             this.textBoxSumPrice_SAN.Multiline = true;
             this.textBoxSumPrice_SAN.Name = "textBoxSumPrice_SAN";
             this.textBoxSumPrice_SAN.Size = new System.Drawing.Size(121, 29);
@@ -183,7 +199,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // 
             this.labelSumPrice_SAN.AutoSize = true;
             this.labelSumPrice_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSumPrice_SAN.Location = new System.Drawing.Point(0, 237);
+            this.labelSumPrice_SAN.Location = new System.Drawing.Point(6, 199);
             this.labelSumPrice_SAN.Name = "labelSumPrice_SAN";
             this.labelSumPrice_SAN.Size = new System.Drawing.Size(186, 18);
             this.labelSumPrice_SAN.TabIndex = 6;
@@ -192,7 +208,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // buttonFloat_SAN
             // 
             this.buttonFloat_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonFloat_SAN.Location = new System.Drawing.Point(35, 129);
+            this.buttonFloat_SAN.Location = new System.Drawing.Point(257, 131);
             this.buttonFloat_SAN.Name = "buttonFloat_SAN";
             this.buttonFloat_SAN.Size = new System.Drawing.Size(99, 27);
             this.buttonFloat_SAN.TabIndex = 5;
@@ -208,7 +224,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.textBoxfloat_SAN.Multiline = true;
             this.textBoxfloat_SAN.Name = "textBoxfloat_SAN";
             this.textBoxfloat_SAN.ReadOnly = true;
-            this.textBoxfloat_SAN.Size = new System.Drawing.Size(121, 161);
+            this.textBoxfloat_SAN.Size = new System.Drawing.Size(121, 31);
             this.textBoxfloat_SAN.TabIndex = 4;
             // 
             // labelfloat_SAN
@@ -343,8 +359,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // 
             this.panelFill_SAN.BackColor = System.Drawing.SystemColors.Control;
             this.panelFill_SAN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFill_SAN.Controls.Add(this.tabControl_SAN);
             this.panelFill_SAN.Controls.Add(this.buttonDeleteRow_SAN);
-            this.panelFill_SAN.Controls.Add(this.dataGridViewMatrix_SAN);
             this.panelFill_SAN.Controls.Add(this.buttonAddRow_SAN);
             this.panelFill_SAN.Controls.Add(this.buttonSaveFile_SAN);
             this.panelFill_SAN.Controls.Add(this.buttonOpenFile_SAN);
@@ -367,6 +383,86 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.buttonDeleteRow_SAN.MouseEnter += new System.EventHandler(this.buttonDeleteRow_SAN_MouseEnter);
             this.buttonDeleteRow_SAN.MouseLeave += new System.EventHandler(this.buttonDeleteRow_SAN_MouseLeave);
             // 
+            // buttonAddRow_SAN
+            // 
+            this.buttonAddRow_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddRow_SAN.Image")));
+            this.buttonAddRow_SAN.Location = new System.Drawing.Point(152, 6);
+            this.buttonAddRow_SAN.Name = "buttonAddRow_SAN";
+            this.buttonAddRow_SAN.Size = new System.Drawing.Size(74, 71);
+            this.buttonAddRow_SAN.TabIndex = 2;
+            this.toolTipButton_SAN.SetToolTip(this.buttonAddRow_SAN, "Добавить информацию");
+            this.buttonAddRow_SAN.UseVisualStyleBackColor = true;
+            this.buttonAddRow_SAN.Click += new System.EventHandler(this.buttonAddRow_SAN_Click);
+            this.buttonAddRow_SAN.MouseEnter += new System.EventHandler(this.buttonAddRow_SAN_MouseEnter);
+            this.buttonAddRow_SAN.MouseLeave += new System.EventHandler(this.buttonAddRow_SAN_MouseLeave);
+            // 
+            // buttonSaveFile_SAN
+            // 
+            this.buttonSaveFile_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveFile_SAN.Image")));
+            this.buttonSaveFile_SAN.Location = new System.Drawing.Point(433, 6);
+            this.buttonSaveFile_SAN.Name = "buttonSaveFile_SAN";
+            this.buttonSaveFile_SAN.Size = new System.Drawing.Size(74, 71);
+            this.buttonSaveFile_SAN.TabIndex = 1;
+            this.toolTipButton_SAN.SetToolTip(this.buttonSaveFile_SAN, "Сохранить измененный файл");
+            this.buttonSaveFile_SAN.UseVisualStyleBackColor = true;
+            this.buttonSaveFile_SAN.Click += new System.EventHandler(this.buttonSaveFile_SAN_Click);
+            this.buttonSaveFile_SAN.MouseEnter += new System.EventHandler(this.buttonSaveFile_SAN_MouseEnter);
+            this.buttonSaveFile_SAN.MouseLeave += new System.EventHandler(this.buttonSaveFile_SAN_MouseLeave);
+            // 
+            // buttonOpenFile_SAN
+            // 
+            this.buttonOpenFile_SAN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOpenFile_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenFile_SAN.Image")));
+            this.buttonOpenFile_SAN.Location = new System.Drawing.Point(15, 6);
+            this.buttonOpenFile_SAN.Name = "buttonOpenFile_SAN";
+            this.buttonOpenFile_SAN.Size = new System.Drawing.Size(74, 71);
+            this.buttonOpenFile_SAN.TabIndex = 0;
+            this.toolTipButton_SAN.SetToolTip(this.buttonOpenFile_SAN, "Добавить файл\r\n");
+            this.buttonOpenFile_SAN.UseVisualStyleBackColor = true;
+            this.buttonOpenFile_SAN.Click += new System.EventHandler(this.buttonOpenFile_SAN_Click);
+            this.buttonOpenFile_SAN.MouseEnter += new System.EventHandler(this.buttonOpenFile_SAN_MouseEnter);
+            this.buttonOpenFile_SAN.MouseLeave += new System.EventHandler(this.buttonOpenFile_SAN_MouseLeave);
+            // 
+            // openFileDialogButton_SAN
+            // 
+            this.openFileDialogButton_SAN.FileName = "openFileDialog1";
+            // 
+            // toolTipButton_SAN
+            // 
+            this.toolTipButton_SAN.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTipButton_SAN.ToolTipTitle = "Подсказка";
+            // 
+            // tabControl_SAN
+            // 
+            this.tabControl_SAN.Controls.Add(this.tabPage1);
+            this.tabControl_SAN.Controls.Add(this.tabPage);
+            this.tabControl_SAN.Location = new System.Drawing.Point(3, 86);
+            this.tabControl_SAN.Name = "tabControl_SAN";
+            this.tabControl_SAN.SelectedIndex = 0;
+            this.tabControl_SAN.Size = new System.Drawing.Size(817, 475);
+            this.tabControl_SAN.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridViewMatrix_SAN);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(809, 449);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage
+            // 
+            this.tabPage.Location = new System.Drawing.Point(4, 22);
+            this.tabPage.Name = "tabPage";
+            this.tabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage.Size = new System.Drawing.Size(742, 449);
+            this.tabPage.TabIndex = 1;
+            this.tabPage.Text = "tabPage2";
+            this.tabPage.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewMatrix_SAN
             // 
             this.dataGridViewMatrix_SAN.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -380,11 +476,11 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.CountUpakovok_SAN,
             this.postavshik_SAN,
             this.price_SAN});
-            this.dataGridViewMatrix_SAN.Location = new System.Drawing.Point(14, 83);
+            this.dataGridViewMatrix_SAN.Location = new System.Drawing.Point(6, 7);
             this.dataGridViewMatrix_SAN.Name = "dataGridViewMatrix_SAN";
             this.dataGridViewMatrix_SAN.RowHeadersVisible = false;
             this.dataGridViewMatrix_SAN.Size = new System.Drawing.Size(795, 479);
-            this.dataGridViewMatrix_SAN.TabIndex = 3;
+            this.dataGridViewMatrix_SAN.TabIndex = 4;
             // 
             // Articule_SAN
             // 
@@ -436,55 +532,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.price_SAN.ReadOnly = true;
             this.price_SAN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // buttonAddRow_SAN
-            // 
-            this.buttonAddRow_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddRow_SAN.Image")));
-            this.buttonAddRow_SAN.Location = new System.Drawing.Point(152, 6);
-            this.buttonAddRow_SAN.Name = "buttonAddRow_SAN";
-            this.buttonAddRow_SAN.Size = new System.Drawing.Size(74, 71);
-            this.buttonAddRow_SAN.TabIndex = 2;
-            this.toolTipButton_SAN.SetToolTip(this.buttonAddRow_SAN, "Добавить информацию");
-            this.buttonAddRow_SAN.UseVisualStyleBackColor = true;
-            this.buttonAddRow_SAN.Click += new System.EventHandler(this.buttonAddRow_SAN_Click);
-            this.buttonAddRow_SAN.MouseEnter += new System.EventHandler(this.buttonAddRow_SAN_MouseEnter);
-            this.buttonAddRow_SAN.MouseLeave += new System.EventHandler(this.buttonAddRow_SAN_MouseLeave);
-            // 
-            // buttonSaveFile_SAN
-            // 
-            this.buttonSaveFile_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveFile_SAN.Image")));
-            this.buttonSaveFile_SAN.Location = new System.Drawing.Point(433, 6);
-            this.buttonSaveFile_SAN.Name = "buttonSaveFile_SAN";
-            this.buttonSaveFile_SAN.Size = new System.Drawing.Size(74, 71);
-            this.buttonSaveFile_SAN.TabIndex = 1;
-            this.toolTipButton_SAN.SetToolTip(this.buttonSaveFile_SAN, "Сохранить измененный файл");
-            this.buttonSaveFile_SAN.UseVisualStyleBackColor = true;
-            this.buttonSaveFile_SAN.Click += new System.EventHandler(this.buttonSaveFile_SAN_Click);
-            this.buttonSaveFile_SAN.MouseEnter += new System.EventHandler(this.buttonSaveFile_SAN_MouseEnter);
-            this.buttonSaveFile_SAN.MouseLeave += new System.EventHandler(this.buttonSaveFile_SAN_MouseLeave);
-            // 
-            // buttonOpenFile_SAN
-            // 
-            this.buttonOpenFile_SAN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOpenFile_SAN.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenFile_SAN.Image")));
-            this.buttonOpenFile_SAN.Location = new System.Drawing.Point(15, 6);
-            this.buttonOpenFile_SAN.Name = "buttonOpenFile_SAN";
-            this.buttonOpenFile_SAN.Size = new System.Drawing.Size(74, 71);
-            this.buttonOpenFile_SAN.TabIndex = 0;
-            this.toolTipButton_SAN.SetToolTip(this.buttonOpenFile_SAN, "Добавить файл\r\n");
-            this.buttonOpenFile_SAN.UseVisualStyleBackColor = true;
-            this.buttonOpenFile_SAN.Click += new System.EventHandler(this.buttonOpenFile_SAN_Click);
-            this.buttonOpenFile_SAN.MouseEnter += new System.EventHandler(this.buttonOpenFile_SAN_MouseEnter);
-            this.buttonOpenFile_SAN.MouseLeave += new System.EventHandler(this.buttonOpenFile_SAN_MouseLeave);
-            // 
-            // openFileDialogButton_SAN
-            // 
-            this.openFileDialogButton_SAN.FileName = "openFileDialog1";
-            // 
-            // toolTipButton_SAN
-            // 
-            this.toolTipButton_SAN.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTipButton_SAN.ToolTipTitle = "Подсказка";
-            // 
             // FormMain_SAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,11 +547,14 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.panelTop_SAN.ResumeLayout(false);
             this.panelTop_SAN.PerformLayout();
             this.panelLeft_SAN.ResumeLayout(false);
+            this.panelLeft_SAN.PerformLayout();
             this.groupBoxElementStatics_SAN.ResumeLayout(false);
             this.groupBoxElementStatics_SAN.PerformLayout();
             this.groupBoxFilter_SAN.ResumeLayout(false);
             this.groupBoxFilter_SAN.PerformLayout();
             this.panelFill_SAN.ResumeLayout(false);
+            this.tabControl_SAN.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).EndInit();
             this.ResumeLayout(false);
 
@@ -524,19 +574,10 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private System.Windows.Forms.Button buttonAddRow_SAN;
         private System.Windows.Forms.Button buttonSaveFile_SAN;
         private System.Windows.Forms.Button buttonOpenFile_SAN;
-        private System.Windows.Forms.DataGridView dataGridViewMatrix_SAN;
         private System.Windows.Forms.SaveFileDialog saveFileDialogMain_SAN;
         private System.Windows.Forms.Button buttonDeleteRow_SAN;
         private System.Windows.Forms.GroupBox groupBoxFilter_SAN;
         private System.Windows.Forms.ComboBox comboBoxFilter_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Articule_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn otdel_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountSklad_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountUpakovka_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountUpakovok_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn postavshik_SAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price_SAN;
         private System.Windows.Forms.ComboBox comboBoxSort_SAN;
         private System.Windows.Forms.Label labelPrice_SAN;
         private System.Windows.Forms.Label labelOtdel_SAN;
@@ -552,6 +593,19 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private System.Windows.Forms.Button buttonSumPrice_SAN;
         private System.Windows.Forms.TextBox textBoxSumPrice_SAN;
         private System.Windows.Forms.Label labelSumPrice_SAN;
+        private System.Windows.Forms.TextBox textBoxPoisk_SAN;
+        private System.Windows.Forms.TabControl tabControl_SAN;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridViewMatrix_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Articule_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn otdel_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountSklad_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountUpakovka_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountUpakovok_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn postavshik_SAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price_SAN;
+        private System.Windows.Forms.TabPage tabPage;
     }
 }
 

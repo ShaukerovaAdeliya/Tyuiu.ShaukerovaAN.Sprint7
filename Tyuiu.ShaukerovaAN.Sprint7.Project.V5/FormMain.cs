@@ -304,7 +304,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 {
                     sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[7].Value);
                 }
-                double mid = (double)sum / dataGridViewMatrix_SAN.Rows[i].Cells.Count;
+                double mid = sum / dataGridViewMatrix_SAN.Rows[i].Cells.Count;
                 textBoxfloat_SAN.Text = mid.ToString();
             }
 
@@ -322,7 +322,27 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
     
         }
 
+        private void textBoxPoisk_SAN_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBoxPoisk_SAN.Text.ToLower(); //приведение к нижнему регистру
+            foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
+            {
+                if (row.Cells["ColumnF"].Value != null && row.Cells["ColumnI"].Value != null)
+                {
+                    string column2Text = row.Cells["ColumnF"].Value.ToString().ToLower();
+                    string column3Text = row.Cells["ColumnO"].Value.ToString().ToLower();
 
+                    if (column2Text.Contains(searchText) || column3Text.Contains(searchText))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
     }
 
 }
