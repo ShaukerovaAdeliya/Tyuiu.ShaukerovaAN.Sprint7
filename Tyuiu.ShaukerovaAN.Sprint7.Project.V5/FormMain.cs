@@ -322,6 +322,10 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
     
         }
 
+
+
+
+
         private void textBoxPoisk_SAN_TextChanged(object sender, EventArgs e)
         {
             string searchText = textBoxPoisk_SAN.Text.ToLower(); //приведение к нижнему регистру
