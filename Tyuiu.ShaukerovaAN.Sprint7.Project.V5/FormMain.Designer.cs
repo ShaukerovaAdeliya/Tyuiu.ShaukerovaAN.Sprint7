@@ -31,10 +31,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_SAN));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panelTop_SAN = new System.Windows.Forms.Panel();
             this.labelOptovayaBasa_SAN = new System.Windows.Forms.Label();
             this.buttonOProgramme_SAN = new System.Windows.Forms.Button();
@@ -75,8 +73,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.textBoxSum_SAN = new System.Windows.Forms.TextBox();
             this.labelSum_SAN = new System.Windows.Forms.Label();
             this.groupBoxFilter_SAN = new System.Windows.Forms.GroupBox();
-            this.comboBoxArticule_SAN = new System.Windows.Forms.ComboBox();
-            this.labelArticule_SAN = new System.Windows.Forms.Label();
             this.labelPrice_SAN = new System.Windows.Forms.Label();
             this.labelOtdel_SAN = new System.Windows.Forms.Label();
             this.comboBoxSort_SAN = new System.Windows.Forms.ComboBox();
@@ -95,7 +91,12 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.postavshik_SAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price_SAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageGraphik_SAN = new System.Windows.Forms.TabPage();
-            this.buttonAddChart_SAN = new System.Windows.Forms.Button();
+            this.groupBoxSumBakaleya_SAN = new System.Windows.Forms.GroupBox();
+            this.textBoxSumBakaleya_SAN = new System.Windows.Forms.TextBox();
+            this.groupBoxSumgastronomiya_SAN = new System.Windows.Forms.GroupBox();
+            this.textBoxSumGastronomiya_SAN = new System.Windows.Forms.TextBox();
+            this.groupBoxSumMoloko_SAN = new System.Windows.Forms.GroupBox();
+            this.textBoxSumMoloko_SAN = new System.Windows.Forms.TextBox();
             this.chart_SAN = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonSaveFile_SAN = new System.Windows.Forms.Button();
             this.buttonOpenFile_SAN = new System.Windows.Forms.Button();
@@ -114,6 +115,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.tabPageDataGrid_SAN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).BeginInit();
             this.tabPageGraphik_SAN.SuspendLayout();
+            this.groupBoxSumBakaleya_SAN.SuspendLayout();
+            this.groupBoxSumgastronomiya_SAN.SuspendLayout();
+            this.groupBoxSumMoloko_SAN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_SAN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -408,9 +412,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.groupBoxPoisk_SAN.Controls.Add(this.labelPoiskName_SAN);
             this.groupBoxPoisk_SAN.Controls.Add(this.textBoxPoiskName_SAN);
             this.groupBoxPoisk_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxPoisk_SAN.Location = new System.Drawing.Point(288, 7);
+            this.groupBoxPoisk_SAN.Location = new System.Drawing.Point(219, 7);
             this.groupBoxPoisk_SAN.Name = "groupBoxPoisk_SAN";
-            this.groupBoxPoisk_SAN.Size = new System.Drawing.Size(179, 142);
+            this.groupBoxPoisk_SAN.Size = new System.Drawing.Size(242, 142);
             this.groupBoxPoisk_SAN.TabIndex = 3;
             this.groupBoxPoisk_SAN.TabStop = false;
             this.groupBoxPoisk_SAN.Text = "Поиск";
@@ -421,9 +425,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.textBoxPoiskPostavshik_SAN.Location = new System.Drawing.Point(19, 99);
             this.textBoxPoiskPostavshik_SAN.Multiline = true;
             this.textBoxPoiskPostavshik_SAN.Name = "textBoxPoiskPostavshik_SAN";
-            this.textBoxPoiskPostavshik_SAN.Size = new System.Drawing.Size(137, 22);
+            this.textBoxPoiskPostavshik_SAN.Size = new System.Drawing.Size(180, 22);
             this.textBoxPoiskPostavshik_SAN.TabIndex = 6;
-            this.textBoxPoiskPostavshik_SAN.TextChanged += new System.EventHandler(this.textBoxPoiskPostavshik_SAN_TextChanged);
+            this.textBoxPoiskPostavshik_SAN.TextChanged += new System.EventHandler(this.textBoxPoiskPostavshik_SAN_TextChanged_1);
             // 
             // labelPoiskPostavshik_SAN
             // 
@@ -450,8 +454,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.textBoxPoiskName_SAN.Location = new System.Drawing.Point(19, 44);
             this.textBoxPoiskName_SAN.Multiline = true;
             this.textBoxPoiskName_SAN.Name = "textBoxPoiskName_SAN";
-            this.textBoxPoiskName_SAN.Size = new System.Drawing.Size(137, 24);
+            this.textBoxPoiskName_SAN.Size = new System.Drawing.Size(180, 24);
             this.textBoxPoiskName_SAN.TabIndex = 3;
+            this.textBoxPoiskName_SAN.TextChanged += new System.EventHandler(this.textBoxPoiskName_SAN_TextChanged);
             // 
             // groupBoxElementStatics_SAN
             // 
@@ -539,8 +544,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // 
             // groupBoxFilter_SAN
             // 
-            this.groupBoxFilter_SAN.Controls.Add(this.comboBoxArticule_SAN);
-            this.groupBoxFilter_SAN.Controls.Add(this.labelArticule_SAN);
             this.groupBoxFilter_SAN.Controls.Add(this.labelPrice_SAN);
             this.groupBoxFilter_SAN.Controls.Add(this.labelOtdel_SAN);
             this.groupBoxFilter_SAN.Controls.Add(this.comboBoxSort_SAN);
@@ -548,36 +551,15 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.groupBoxFilter_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBoxFilter_SAN.Location = new System.Drawing.Point(12, 6);
             this.groupBoxFilter_SAN.Name = "groupBoxFilter_SAN";
-            this.groupBoxFilter_SAN.Size = new System.Drawing.Size(261, 143);
+            this.groupBoxFilter_SAN.Size = new System.Drawing.Size(162, 143);
             this.groupBoxFilter_SAN.TabIndex = 0;
             this.groupBoxFilter_SAN.TabStop = false;
             this.groupBoxFilter_SAN.Text = "Сортировка";
             // 
-            // comboBoxArticule_SAN
-            // 
-            this.comboBoxArticule_SAN.FormattingEnabled = true;
-            this.comboBoxArticule_SAN.Items.AddRange(new object[] {
-            "По возрастанию",
-            "По убыванию"});
-            this.comboBoxArticule_SAN.Location = new System.Drawing.Point(9, 49);
-            this.comboBoxArticule_SAN.Name = "comboBoxArticule_SAN";
-            this.comboBoxArticule_SAN.Size = new System.Drawing.Size(111, 23);
-            this.comboBoxArticule_SAN.TabIndex = 11;
-            this.comboBoxArticule_SAN.SelectedIndexChanged += new System.EventHandler(this.comboBoxArticule_SAN_SelectedIndexChanged);
-            // 
-            // labelArticule_SAN
-            // 
-            this.labelArticule_SAN.AutoSize = true;
-            this.labelArticule_SAN.Location = new System.Drawing.Point(6, 28);
-            this.labelArticule_SAN.Name = "labelArticule_SAN";
-            this.labelArticule_SAN.Size = new System.Drawing.Size(80, 15);
-            this.labelArticule_SAN.TabIndex = 10;
-            this.labelArticule_SAN.Text = "По артикулу:";
-            // 
             // labelPrice_SAN
             // 
             this.labelPrice_SAN.AutoSize = true;
-            this.labelPrice_SAN.Location = new System.Drawing.Point(7, 75);
+            this.labelPrice_SAN.Location = new System.Drawing.Point(7, 81);
             this.labelPrice_SAN.Name = "labelPrice_SAN";
             this.labelPrice_SAN.Size = new System.Drawing.Size(57, 15);
             this.labelPrice_SAN.TabIndex = 5;
@@ -586,7 +568,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // labelOtdel_SAN
             // 
             this.labelOtdel_SAN.AutoSize = true;
-            this.labelOtdel_SAN.Location = new System.Drawing.Point(128, 27);
+            this.labelOtdel_SAN.Location = new System.Drawing.Point(6, 26);
             this.labelOtdel_SAN.Name = "labelOtdel_SAN";
             this.labelOtdel_SAN.Size = new System.Drawing.Size(69, 15);
             this.labelOtdel_SAN.TabIndex = 4;
@@ -597,10 +579,11 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.comboBoxSort_SAN.FormattingEnabled = true;
             this.comboBoxSort_SAN.Items.AddRange(new object[] {
             "Дороже",
-            "Дешевле"});
-            this.comboBoxSort_SAN.Location = new System.Drawing.Point(6, 93);
+            "Дешевле",
+            "Сбросить сортировку"});
+            this.comboBoxSort_SAN.Location = new System.Drawing.Point(6, 103);
             this.comboBoxSort_SAN.Name = "comboBoxSort_SAN";
-            this.comboBoxSort_SAN.Size = new System.Drawing.Size(114, 23);
+            this.comboBoxSort_SAN.Size = new System.Drawing.Size(107, 23);
             this.comboBoxSort_SAN.TabIndex = 3;
             this.comboBoxSort_SAN.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilter_SAN_SelectedIndexChanged);
             // 
@@ -609,8 +592,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.comboBoxFilter_SAN.Items.AddRange(new object[] {
             "Молоко",
             "Бакалея",
-            "Мясная гастрономия"});
-            this.comboBoxFilter_SAN.Location = new System.Drawing.Point(131, 49);
+            "Мясная гастрономия",
+            "Сбросить сортировку"});
+            this.comboBoxFilter_SAN.Location = new System.Drawing.Point(6, 49);
             this.comboBoxFilter_SAN.Name = "comboBoxFilter_SAN";
             this.comboBoxFilter_SAN.Size = new System.Drawing.Size(107, 23);
             this.comboBoxFilter_SAN.TabIndex = 2;
@@ -736,7 +720,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             // 
             // tabPageGraphik_SAN
             // 
-            this.tabPageGraphik_SAN.Controls.Add(this.buttonAddChart_SAN);
+            this.tabPageGraphik_SAN.Controls.Add(this.groupBoxSumBakaleya_SAN);
+            this.tabPageGraphik_SAN.Controls.Add(this.groupBoxSumgastronomiya_SAN);
+            this.tabPageGraphik_SAN.Controls.Add(this.groupBoxSumMoloko_SAN);
             this.tabPageGraphik_SAN.Controls.Add(this.chart_SAN);
             this.tabPageGraphik_SAN.Location = new System.Drawing.Point(4, 22);
             this.tabPageGraphik_SAN.Name = "tabPageGraphik_SAN";
@@ -746,34 +732,90 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.tabPageGraphik_SAN.Text = "График";
             this.tabPageGraphik_SAN.UseVisualStyleBackColor = true;
             // 
-            // buttonAddChart_SAN
+            // groupBoxSumBakaleya_SAN
             // 
-            this.buttonAddChart_SAN.Location = new System.Drawing.Point(669, 17);
-            this.buttonAddChart_SAN.Name = "buttonAddChart_SAN";
-            this.buttonAddChart_SAN.Size = new System.Drawing.Size(91, 42);
-            this.buttonAddChart_SAN.TabIndex = 1;
-            this.buttonAddChart_SAN.Text = "Добавить";
-            this.buttonAddChart_SAN.UseVisualStyleBackColor = true;
-            this.buttonAddChart_SAN.Click += new System.EventHandler(this.buttonAddChart_SAN_Click);
+            this.groupBoxSumBakaleya_SAN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSumBakaleya_SAN.Controls.Add(this.textBoxSumBakaleya_SAN);
+            this.groupBoxSumBakaleya_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxSumBakaleya_SAN.Location = new System.Drawing.Point(560, 111);
+            this.groupBoxSumBakaleya_SAN.MaximumSize = new System.Drawing.Size(200, 82);
+            this.groupBoxSumBakaleya_SAN.Name = "groupBoxSumBakaleya_SAN";
+            this.groupBoxSumBakaleya_SAN.Size = new System.Drawing.Size(200, 82);
+            this.groupBoxSumBakaleya_SAN.TabIndex = 2;
+            this.groupBoxSumBakaleya_SAN.TabStop = false;
+            this.groupBoxSumBakaleya_SAN.Text = "Бакалея:";
+            // 
+            // textBoxSumBakaleya_SAN
+            // 
+            this.textBoxSumBakaleya_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSumBakaleya_SAN.Location = new System.Drawing.Point(6, 31);
+            this.textBoxSumBakaleya_SAN.Multiline = true;
+            this.textBoxSumBakaleya_SAN.Name = "textBoxSumBakaleya_SAN";
+            this.textBoxSumBakaleya_SAN.Size = new System.Drawing.Size(164, 35);
+            this.textBoxSumBakaleya_SAN.TabIndex = 0;
+            // 
+            // groupBoxSumgastronomiya_SAN
+            // 
+            this.groupBoxSumgastronomiya_SAN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSumgastronomiya_SAN.Controls.Add(this.textBoxSumGastronomiya_SAN);
+            this.groupBoxSumgastronomiya_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxSumgastronomiya_SAN.Location = new System.Drawing.Point(560, 208);
+            this.groupBoxSumgastronomiya_SAN.MaximumSize = new System.Drawing.Size(200, 91);
+            this.groupBoxSumgastronomiya_SAN.MinimumSize = new System.Drawing.Size(200, 91);
+            this.groupBoxSumgastronomiya_SAN.Name = "groupBoxSumgastronomiya_SAN";
+            this.groupBoxSumgastronomiya_SAN.Size = new System.Drawing.Size(200, 91);
+            this.groupBoxSumgastronomiya_SAN.TabIndex = 2;
+            this.groupBoxSumgastronomiya_SAN.TabStop = false;
+            this.groupBoxSumgastronomiya_SAN.Text = "Мясная гастрономия:";
+            // 
+            // textBoxSumGastronomiya_SAN
+            // 
+            this.textBoxSumGastronomiya_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSumGastronomiya_SAN.Location = new System.Drawing.Point(6, 31);
+            this.textBoxSumGastronomiya_SAN.Multiline = true;
+            this.textBoxSumGastronomiya_SAN.Name = "textBoxSumGastronomiya_SAN";
+            this.textBoxSumGastronomiya_SAN.Size = new System.Drawing.Size(164, 35);
+            this.textBoxSumGastronomiya_SAN.TabIndex = 0;
+            // 
+            // groupBoxSumMoloko_SAN
+            // 
+            this.groupBoxSumMoloko_SAN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSumMoloko_SAN.Controls.Add(this.textBoxSumMoloko_SAN);
+            this.groupBoxSumMoloko_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxSumMoloko_SAN.Location = new System.Drawing.Point(560, 6);
+            this.groupBoxSumMoloko_SAN.MaximumSize = new System.Drawing.Size(200, 82);
+            this.groupBoxSumMoloko_SAN.MinimumSize = new System.Drawing.Size(200, 82);
+            this.groupBoxSumMoloko_SAN.Name = "groupBoxSumMoloko_SAN";
+            this.groupBoxSumMoloko_SAN.Size = new System.Drawing.Size(200, 82);
+            this.groupBoxSumMoloko_SAN.TabIndex = 1;
+            this.groupBoxSumMoloko_SAN.TabStop = false;
+            this.groupBoxSumMoloko_SAN.Text = "Молоко:";
+            // 
+            // textBoxSumMoloko_SAN
+            // 
+            this.textBoxSumMoloko_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSumMoloko_SAN.Location = new System.Drawing.Point(6, 31);
+            this.textBoxSumMoloko_SAN.Multiline = true;
+            this.textBoxSumMoloko_SAN.Name = "textBoxSumMoloko_SAN";
+            this.textBoxSumMoloko_SAN.Size = new System.Drawing.Size(164, 35);
+            this.textBoxSumMoloko_SAN.TabIndex = 0;
             // 
             // chart_SAN
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart_SAN.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart_SAN.Legends.Add(legend1);
+            this.chart_SAN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart_SAN.BorderlineColor = System.Drawing.SystemColors.Window;
+            chartArea4.Name = "ChartArea1";
+            this.chart_SAN.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart_SAN.Legends.Add(legend4);
             this.chart_SAN.Location = new System.Drawing.Point(8, 6);
             this.chart_SAN.Name = "chart_SAN";
-            this.chart_SAN.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series3";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            this.chart_SAN.Series.Add(series1);
-            this.chart_SAN.Series.Add(series2);
-            this.chart_SAN.Size = new System.Drawing.Size(646, 437);
+            this.chart_SAN.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            this.chart_SAN.Size = new System.Drawing.Size(498, 433);
             this.chart_SAN.TabIndex = 0;
             this.chart_SAN.Text = "График ";
             // 
@@ -824,9 +866,10 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.Controls.Add(this.splitterPanel_SAN);
             this.Controls.Add(this.panelLeft_SAN);
             this.Controls.Add(this.panelTop_SAN);
+            this.MinimumSize = new System.Drawing.Size(200, 82);
             this.Name = "FormMain_SAN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Оптовая база";
+            this.Text = "Спринт 7 | Проект | Вариант 5 | Шаукерова А.Н.";
             this.panelTop_SAN.ResumeLayout(false);
             this.panelTop_SAN.PerformLayout();
             this.panelLeft_SAN.ResumeLayout(false);
@@ -845,6 +888,12 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.tabPageDataGrid_SAN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMatrix_SAN)).EndInit();
             this.tabPageGraphik_SAN.ResumeLayout(false);
+            this.groupBoxSumBakaleya_SAN.ResumeLayout(false);
+            this.groupBoxSumBakaleya_SAN.PerformLayout();
+            this.groupBoxSumgastronomiya_SAN.ResumeLayout(false);
+            this.groupBoxSumgastronomiya_SAN.PerformLayout();
+            this.groupBoxSumMoloko_SAN.ResumeLayout(false);
+            this.groupBoxSumMoloko_SAN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_SAN)).EndInit();
             this.ResumeLayout(false);
 
@@ -871,8 +920,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private System.Windows.Forms.ComboBox comboBoxSort_SAN;
         private System.Windows.Forms.Label labelPrice_SAN;
         private System.Windows.Forms.Label labelOtdel_SAN;
-        private System.Windows.Forms.Label labelArticule_SAN;
-        private System.Windows.Forms.ComboBox comboBoxArticule_SAN;
         private System.Windows.Forms.GroupBox groupBoxElementStatics_SAN;
         private System.Windows.Forms.TextBox textBoxSum_SAN;
         private System.Windows.Forms.Label labelSum_SAN;
@@ -918,7 +965,12 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private System.Windows.Forms.GroupBox groupBoxGraphik_SAN;
         private System.Windows.Forms.Button buttonDone_SAN;
         private System.Windows.Forms.Label labelGraphik_SAN;
-        private System.Windows.Forms.Button buttonAddChart_SAN;
+        private System.Windows.Forms.GroupBox groupBoxSumBakaleya_SAN;
+        private System.Windows.Forms.TextBox textBoxSumBakaleya_SAN;
+        private System.Windows.Forms.GroupBox groupBoxSumgastronomiya_SAN;
+        private System.Windows.Forms.TextBox textBoxSumGastronomiya_SAN;
+        private System.Windows.Forms.GroupBox groupBoxSumMoloko_SAN;
+        private System.Windows.Forms.TextBox textBoxSumMoloko_SAN;
     }
 }
 

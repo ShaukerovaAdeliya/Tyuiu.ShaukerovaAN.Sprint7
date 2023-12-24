@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 using Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Lib;
 using Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test;
 
@@ -24,9 +25,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         static int rows;
         static int columns;
         static string openFilePath;
-        DataService ds = new DataService();
-        
-        
+        DataService ds = new DataService();      
         private void buttonOpenFile_SAN_Click(object sender, EventArgs e)
         {
             try
@@ -223,28 +222,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 
         private void comboBoxFilter_SAN_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string valueFilt = comboBoxFilter_SAN.SelectedItem.ToString(); //извлечение строкового значения выбранного элемента ComboBox
-            if (!string.IsNullOrEmpty(valueFilt))
-            {
-                foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
-                {
-                    if (!row.IsNewRow) // проверка новая ли строка
-                    {
-                        if (row.Cells["otdel_SAN"].Value != null && row.Cells["otdel_SAN"].Value.ToString() == valueFilt)
-                        {
-                            row.Visible = true;
-                        }
-                        else
-                        {
-                            row.Visible = false;
-                        }
-                    }
-                }
-            }
-        }
-
-        private void comboBoxSort_SAN_SelectedIndexChanged(object sender, EventArgs e)
-        {
             if (comboBoxSort_SAN.SelectedItem != null)
             {
                 int columnIndex = 7;
@@ -272,64 +249,13 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 
                     if (selectedItem == "Дороже")
                     {
-                        dataGridViewMatrix_SAN.Sort(column, ListSortDirection.Ascending);
+                        dataGridViewMatrix_SAN.Sort(column, ListSortDirection.Descending);
+                        
                     }
                     if (selectedItem == "Дешевле")
                     {
-                        dataGridViewMatrix_SAN.Sort(column, ListSortDirection.Descending);
-                    }
-                    if (selectedItem == "Сбросить сортировку")
-                    {
-                        for (int i = 0; i < rows; i++)
-                        {
-                            for (int j = 0; j < columns; j++)
-                            {
-                                dataGridViewMatrix_SAN.Rows[i].Cells[j].Value = matrix[i, j];
-                            }
-                        }
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("Невозможно выполнить сортировку", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-        private void comboBoxArticule_SAN_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxArticule_SAN.SelectedItem != null)
-            {
-                int columnIndex = 0;
-                string selectedItem = comboBoxArticule_SAN.SelectedItem.ToString();
-                foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
-                {
-                    double cellValue;
-                    if (row.Cells[columnIndex].Value != null && double.TryParse(row.Cells[columnIndex].Value.ToString(), out cellValue))
-                    {
-                        row.Cells[columnIndex].Value = cellValue;
-                    }
-                }
-                try
-                {
-
-                    string[,] matrix = ds.LoadFromDataFile(openFilePath);
-
-                    rows = matrix.GetLength(0);
-                    columns = matrix.GetLength(1);
-
-                    dataGridViewMatrix_SAN.RowCount = rows + 1;
-                    dataGridViewMatrix_SAN.ColumnCount = columns;
-
-                    DataGridViewColumn column = dataGridViewMatrix_SAN.Columns[0];
-
-                    if (selectedItem == "По возрастанию")
-                    {
                         dataGridViewMatrix_SAN.Sort(column, ListSortDirection.Ascending);
                     }
-                    if (selectedItem == "По убыванию")
-                    {
-                        dataGridViewMatrix_SAN.Sort(column, ListSortDirection.Descending);
-                    }
                     if (selectedItem == "Сбросить сортировку")
                     {
                         for (int i = 0; i < rows; i++)
@@ -347,6 +273,29 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 }
             }
         }
+
+        private void comboBoxSort_SAN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valueFilt = comboBoxFilter_SAN.SelectedItem.ToString(); //извлечение строкового значения выбранного элемента ComboBox
+            if (!string.IsNullOrEmpty(valueFilt))
+            {
+                foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
+                {
+                    if (!row.IsNewRow) // проверка новая ли строка
+                    {
+                        if (row.Cells["otdel_SAN"].Value != null && row.Cells["otdel_SAN"].Value.ToString() == valueFilt)
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+       
         private void buttonSum_SAN_Click(object sender, EventArgs e)
         {
             int sum = 0;
@@ -367,94 +316,77 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             textBoxSumPrice_SAN.Text = sum.ToString();
     
         }
-        private void textBoxPoiskName_SAN_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void textBoxPoiskPostavshik_SAN_TextChanged(object sender, EventArgs e)
         {
-            string searchText = textBoxPoiskPostavshik_SAN.Text.ToLower(); //приведение к нижнему регистру
-            foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
-            {
-                if (row.Cells["postavshik_SAN"].Value != null)
-                {
-                    string column6Text = row.Cells["postavshik_SAN"].Value.ToString().ToLower();
-                    if (column6Text.Contains(searchText))
-                    {
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
-                    }
-                }
-            }
+            
         }
 
         private void buttonDone_SAN_Click(object sender, EventArgs e)
         {
-            int rows = dataGridViewMatrix_SAN.RowCount;
-            int columns = dataGridViewMatrix_SAN.ColumnCount;
-            string str;
-            string[,] matrix = new string[rows, columns];
-            for (int i = 0; i < rows; i++)
+            try
             {
-                for (int j = 0; j < columns; j++)
+                int rows = dataGridViewMatrix_SAN.RowCount;
+                int columns = dataGridViewMatrix_SAN.ColumnCount;
+                string str;
+                string[,] matrix = new string[rows, columns];
+                for (int i = 0; i < rows; i++)
                 {
-                    str = "";
-                    str += dataGridViewMatrix_SAN.Rows[i].Cells[j].Value;
-                    matrix[i, j] = str;
+                    for (int j = 0; j < columns; j++)
+                    {
+                        str = "";
+                        str += dataGridViewMatrix_SAN.Rows[i].Cells[j].Value;
+                        matrix[i, j] = str;
+                    }
+
                 }
 
-            }
+                int summ = 0;
+                int sumb = 0;
+                int summg = 0;
+                for (int i = 0; i < rows - 1; i++)
+                {
+                    if (matrix[i, 1] == "Молоко")
+                    {
+                        summ += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
+                    }
+                    if (matrix[i, 1] == "Бакалея")
+                    {
+                        sumb += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
+                    }
+                    if (matrix[i, 1] == "Мясная гастрономия")
+                    {
+                        summg += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
+                    }
+                }
+                textBoxSumMoloko_SAN.Text = summ.ToString();
+                textBoxSumBakaleya_SAN.Text = sumb.ToString();
+                textBoxSumGastronomiya_SAN.Text = summg.ToString();
 
-            int m = 0;
-            int b = 0;
-            int mg = 0;
-            for (int i = 0; i < rows - 1; i++)
+                string[] seriesArray = { "Молоко", "Бакалея", "Мясная гастрономия" };
+                int[] pointsArray = { summ, sumb, summg }; 
+
+                // Set palette.
+                this.chart_SAN.Palette = ChartColorPalette.Fire;
+
+                //Set title.
+                this.chart_SAN.Titles.Add("Количество-отдел, шт.");
+
+                // Add series.
+                for (int i = 0; i < seriesArray.Length; i++)
+                {
+                    // Add series.
+                    Series series = this.chart_SAN.Series.Add(seriesArray[i]);
+
+                    // Add point.
+                    series.Points.Add(pointsArray[i]);
+                }
+            }            
+            catch
             {
-                if (matrix[i, 1] == "Молоко")
-                {
-                    m++;
-                }
-                if (matrix[i, 1] == "Бакалея")
-                {
-                    b++;
-                }
-                if (matrix[i, 1] == "Мясная гастрономия")
-                {
-                    mg++;
-                }
+                MessageBox.Show("Невозможно повторно построить график", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonAddChart_SAN_Click(object sender, EventArgs e)
-        {
-            chart_SAN.Series[0].Points.Clear();
-            chart_SAN.Series[1].Points.Clear();
-            //chart_SAN.Series[2].Points.Clear();
-            chart_SAN.Titles.Add("Количество на складе, шт.");
-            chart_SAN.ChartAreas[0].AxisX.Title = "Товар";
-            chart_SAN.ChartAreas[0].AxisY.Title = "Количество";
-
-            for (int i = 0; i < dataGridViewMatrix_SAN.RowCount - 1; i++)
-            {
-                chart_SAN.Series[1].Points.AddXY(i+1 , dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
-            }
-
-            //chart_SAN.Series[0].Points.AddXY(Convert.ToDouble(textBoxBUG.Text, ));
-            //chart_SAN.Series[1].Points.AddXY(Convert.ToDouble(textBoxGEOLOG.Text));
-            //chart_SAN.Series[2].Points.AddXY(Convert.ToDouble(textBoxSECR.Text));
-            //chart_SAN.Series[3].Points.AddXY(Convert.ToDouble(textBoxMENEDG.Text));
-
-                //for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; i++)
-                //{
-                //int x = Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
-                //int y = Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[4].Value);
-                //chart_SAN.Series[0].Points.AddXY(x, y);
-
-                //}
-        }
         private void buttonSum_SAN_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
@@ -483,6 +415,46 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private void buttonDone_SAN_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+
+        private void textBoxPoiskName_SAN_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBoxPoiskName_SAN.Text.ToLower(); //приведение к нижнему регистру
+            foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
+            {
+                if (row.Cells["name_SAN"].Value != null)
+                {
+                    string column2Text = row.Cells["name_SAN"].Value.ToString().ToLower();
+                    if (column2Text.Contains(searchText))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void textBoxPoiskPostavshik_SAN_TextChanged_1(object sender, EventArgs e)
+        {
+            string searchText = textBoxPoiskPostavshik_SAN.Text.ToLower(); //приведение к нижнему регистру
+            foreach (DataGridViewRow row in dataGridViewMatrix_SAN.Rows)
+            {
+                if (row.Cells["postavshik_SAN"].Value != null)
+                {
+                    string column6Text = row.Cells["postavshik_SAN"].Value.ToString().ToLower();
+                    if (column6Text.Contains(searchText))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
         }
     }
 }

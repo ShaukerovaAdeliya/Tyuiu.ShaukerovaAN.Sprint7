@@ -13,7 +13,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test
         {
             DataService ds = new DataService();
 
-            string filePath = @"C:\Users\shauk\Desktop\DataBase.csv";
+            string filePath = @"C:\Users\shauk\source\repos\Tyuiu.ShaukerovaAN.Sprint7\Tyuiu.ShaukerovaAN.Sprint7.Project.V5\bin\Debug\base.csv";
 
             AddDataToCSV(filePath);
         }
@@ -24,8 +24,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test
             {
                 using (var writer = new StreamWriter(filePath, true)) // открытие файла для записи
                 {
-                    // Пример добавления строки 
-                    writer.WriteLine("Артикул; Название");
+                    // Пример добавления строчки 
+                    writer.WriteLine("Начало маршрута; Конец маршрута");
                 }
             }
             catch (Exception ex)
@@ -34,5 +34,10 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
+
     }
 }
+
+
+
+
