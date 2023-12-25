@@ -53,7 +53,16 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 }
                 dataGridViewMatrix_SAN.AutoResizeColumns();
                 dataGridViewMatrix_SAN.ScrollBars = ScrollBars.Both;
-                dataGridViewMatrix_SAN.Rows.RemoveAt(64);
+                for (int i = 0; i < dataGridViewMatrix_SAN.RowCount - 1; i++)
+                {
+
+                    if (dataGridViewMatrix_SAN.Rows[i].Cells[3].Value.ToString() == "")
+                    {
+                        dataGridViewMatrix_SAN.Rows.RemoveAt(i);
+                        i--;
+                    }
+                }
+
                 buttonSaveFile_SAN.Enabled = true;
                 buttonDeleteRow_SAN.Enabled = true;
                 buttonSum_SAN.Enabled = true;
@@ -308,7 +317,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private void buttonSum_SAN_Click(object sender, EventArgs e)
         {
             int sum = 0;
-            for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count - 1 ; i++)
+            for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count ; i++)
             {
                 sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
             }

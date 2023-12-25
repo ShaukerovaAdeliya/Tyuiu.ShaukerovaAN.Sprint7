@@ -31,14 +31,17 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_SAN));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelTop_SAN = new System.Windows.Forms.Panel();
             this.labelOptovayaBasa_SAN = new System.Windows.Forms.Label();
             this.buttonOProgramme_SAN = new System.Windows.Forms.Button();
             this.buttonHelp_SAN = new System.Windows.Forms.Button();
             this.panelLeft_SAN = new System.Windows.Forms.Panel();
+            this.groupBoxSrZnach_SAN = new System.Windows.Forms.GroupBox();
+            this.buttonSrZnach_SAN = new System.Windows.Forms.Button();
+            this.textBoxSrZnach_SAN = new System.Windows.Forms.TextBox();
             this.groupBoxAdd_SAN = new System.Windows.Forms.GroupBox();
             this.textBoxPostavshikAdd_SAN = new System.Windows.Forms.TextBox();
             this.buttonDeleteRow_SAN = new System.Windows.Forms.Button();
@@ -104,11 +107,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.openFileDialogButton_SAN = new System.Windows.Forms.OpenFileDialog();
             this.toolTipButton_SAN = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialogMain_SAN = new System.Windows.Forms.SaveFileDialog();
-            this.buttonSrZnach_SAN = new System.Windows.Forms.Button();
-            this.textBoxSrZnach_SAN = new System.Windows.Forms.TextBox();
-            this.groupBoxSrZnach_SAN = new System.Windows.Forms.GroupBox();
             this.panelTop_SAN.SuspendLayout();
             this.panelLeft_SAN.SuspendLayout();
+            this.groupBoxSrZnach_SAN.SuspendLayout();
             this.groupBoxAdd_SAN.SuspendLayout();
             this.groupBoxPoisk_SAN.SuspendLayout();
             this.groupBoxElementStatics_SAN.SuspendLayout();
@@ -123,7 +124,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.groupBoxSumgastronomiya_SAN.SuspendLayout();
             this.groupBoxSumMoloko_SAN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_SAN)).BeginInit();
-            this.groupBoxSrZnach_SAN.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop_SAN
@@ -191,6 +191,39 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.panelLeft_SAN.Name = "panelLeft_SAN";
             this.panelLeft_SAN.Size = new System.Drawing.Size(473, 574);
             this.panelLeft_SAN.TabIndex = 1;
+            // 
+            // groupBoxSrZnach_SAN
+            // 
+            this.groupBoxSrZnach_SAN.Controls.Add(this.buttonSrZnach_SAN);
+            this.groupBoxSrZnach_SAN.Controls.Add(this.textBoxSrZnach_SAN);
+            this.groupBoxSrZnach_SAN.Location = new System.Drawing.Point(261, 405);
+            this.groupBoxSrZnach_SAN.Name = "groupBoxSrZnach_SAN";
+            this.groupBoxSrZnach_SAN.Size = new System.Drawing.Size(200, 157);
+            this.groupBoxSrZnach_SAN.TabIndex = 5;
+            this.groupBoxSrZnach_SAN.TabStop = false;
+            this.groupBoxSrZnach_SAN.Text = "Среднее значение цены";
+            // 
+            // buttonSrZnach_SAN
+            // 
+            this.buttonSrZnach_SAN.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonSrZnach_SAN.Enabled = false;
+            this.buttonSrZnach_SAN.Location = new System.Drawing.Point(96, 72);
+            this.buttonSrZnach_SAN.Name = "buttonSrZnach_SAN";
+            this.buttonSrZnach_SAN.Size = new System.Drawing.Size(98, 37);
+            this.buttonSrZnach_SAN.TabIndex = 6;
+            this.buttonSrZnach_SAN.Text = "Посчитать";
+            this.buttonSrZnach_SAN.UseVisualStyleBackColor = false;
+            this.buttonSrZnach_SAN.Click += new System.EventHandler(this.buttonSrZnach_SAN_Click);
+            // 
+            // textBoxSrZnach_SAN
+            // 
+            this.textBoxSrZnach_SAN.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxSrZnach_SAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSrZnach_SAN.Location = new System.Drawing.Point(6, 32);
+            this.textBoxSrZnach_SAN.Multiline = true;
+            this.textBoxSrZnach_SAN.Name = "textBoxSrZnach_SAN";
+            this.textBoxSrZnach_SAN.Size = new System.Drawing.Size(134, 34);
+            this.textBoxSrZnach_SAN.TabIndex = 7;
             // 
             // groupBoxAdd_SAN
             // 
@@ -819,19 +852,19 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_SAN.BorderlineColor = System.Drawing.SystemColors.Window;
-            chartArea1.Name = "ChartArea1";
-            this.chart_SAN.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart_SAN.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chart_SAN.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart_SAN.Legends.Add(legend4);
             this.chart_SAN.Location = new System.Drawing.Point(8, 6);
             this.chart_SAN.Name = "chart_SAN";
             this.chart_SAN.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             this.chart_SAN.Size = new System.Drawing.Size(498, 433);
             this.chart_SAN.TabIndex = 0;
             this.chart_SAN.Text = "График ";
-            title1.Name = "Title1";
-            title1.Text = "Количество по отделам";
-            this.chart_SAN.Titles.Add(title1);
+            title4.Name = "Title1";
+            title4.Text = "Количество по отделам";
+            this.chart_SAN.Titles.Add(title4);
             // 
             // buttonSaveFile_SAN
             // 
@@ -872,38 +905,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.toolTipButton_SAN.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipButton_SAN.ToolTipTitle = "Подсказка";
             // 
-            // buttonSrZnach_SAN
-            // 
-            this.buttonSrZnach_SAN.BackColor = System.Drawing.Color.Firebrick;
-            this.buttonSrZnach_SAN.Enabled = false;
-            this.buttonSrZnach_SAN.Location = new System.Drawing.Point(96, 72);
-            this.buttonSrZnach_SAN.Name = "buttonSrZnach_SAN";
-            this.buttonSrZnach_SAN.Size = new System.Drawing.Size(98, 37);
-            this.buttonSrZnach_SAN.TabIndex = 6;
-            this.buttonSrZnach_SAN.Text = "Посчитать";
-            this.buttonSrZnach_SAN.UseVisualStyleBackColor = false;
-            this.buttonSrZnach_SAN.Click += new System.EventHandler(this.buttonSrZnach_SAN_Click);
-            // 
-            // textBoxSrZnach_SAN
-            // 
-            this.textBoxSrZnach_SAN.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxSrZnach_SAN.Location = new System.Drawing.Point(6, 32);
-            this.textBoxSrZnach_SAN.Multiline = true;
-            this.textBoxSrZnach_SAN.Name = "textBoxSrZnach_SAN";
-            this.textBoxSrZnach_SAN.Size = new System.Drawing.Size(134, 34);
-            this.textBoxSrZnach_SAN.TabIndex = 7;
-            // 
-            // groupBoxSrZnach_SAN
-            // 
-            this.groupBoxSrZnach_SAN.Controls.Add(this.buttonSrZnach_SAN);
-            this.groupBoxSrZnach_SAN.Controls.Add(this.textBoxSrZnach_SAN);
-            this.groupBoxSrZnach_SAN.Location = new System.Drawing.Point(261, 405);
-            this.groupBoxSrZnach_SAN.Name = "groupBoxSrZnach_SAN";
-            this.groupBoxSrZnach_SAN.Size = new System.Drawing.Size(200, 157);
-            this.groupBoxSrZnach_SAN.TabIndex = 5;
-            this.groupBoxSrZnach_SAN.TabStop = false;
-            this.groupBoxSrZnach_SAN.Text = "Среднее значение цены";
-            // 
             // FormMain_SAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -920,6 +921,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.panelTop_SAN.ResumeLayout(false);
             this.panelTop_SAN.PerformLayout();
             this.panelLeft_SAN.ResumeLayout(false);
+            this.groupBoxSrZnach_SAN.ResumeLayout(false);
+            this.groupBoxSrZnach_SAN.PerformLayout();
             this.groupBoxAdd_SAN.ResumeLayout(false);
             this.groupBoxAdd_SAN.PerformLayout();
             this.groupBoxPoisk_SAN.ResumeLayout(false);
@@ -942,8 +945,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             this.groupBoxSumMoloko_SAN.ResumeLayout(false);
             this.groupBoxSumMoloko_SAN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_SAN)).EndInit();
-            this.groupBoxSrZnach_SAN.ResumeLayout(false);
-            this.groupBoxSrZnach_SAN.PerformLayout();
             this.ResumeLayout(false);
 
         }
