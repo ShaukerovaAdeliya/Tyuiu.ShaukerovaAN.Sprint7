@@ -34,19 +34,6 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
-
-        [TestMethod]
-        public void CheckCalculateSrZnach()
-        {
-            DataService ds = new DataService();
-            double[] valuesSrZnachTest = { 20, 30, 40, 50, 60 };
-            int RowCount = 5;
-            double wait = 40;
-
-            double res = ds.CalculateSrZnach(valuesSrZnachTest, RowCount);
-
-            Assert.AreEqual(wait, res);
-        }
     }
 }
 

@@ -53,11 +53,14 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 }
                 dataGridViewMatrix_SAN.AutoResizeColumns();
                 dataGridViewMatrix_SAN.ScrollBars = ScrollBars.Both;
+                dataGridViewMatrix_SAN.Rows.RemoveAt(64);
                 buttonSaveFile_SAN.Enabled = true;
-                buttonAddRow_SAN.Enabled = true;
                 buttonDeleteRow_SAN.Enabled = true;
+                buttonSum_SAN.Enabled = true;
+                buttonSumPrice_SAN.Enabled = true;
+                buttonSrZnach_SAN.Enabled = true;
+                buttonDone_SAN.Enabled = true;
 
-               
             }
             catch
             {
@@ -305,7 +308,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         private void buttonSum_SAN_Click(object sender, EventArgs e)
         {
             int sum = 0;
-            for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; ++i)
+            for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count - 1 ; i++)
             {
                 sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[3].Value);
             }
@@ -372,10 +375,9 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 string[] seriesArray = { "Молоко", "Бакалея", "Мясная гастрономия" };
                 int[] pointsArray = { summ, sumb, summg }; 
 
-                // Set palette.
+                // выбрать цвет
                 this.chart_SAN.Palette = ChartColorPalette.Fire;
-
-                //Set title.
+                // добавить название
                 this.chart_SAN.Titles.Add("Количество-отдел, шт.");
 
                 // Add series.
@@ -462,6 +464,42 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                     }
                 }
             }
+        }
+
+        private void buttonSrZnach_SAN_Click(object sender, EventArgs e)
+        {
+            //заведение и заполнение матрицы
+            int rows = dataGridViewMatrix_SAN.RowCount;
+            int columns = dataGridViewMatrix_SAN.ColumnCount;
+            string str;
+            string[,] matrix = new string[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    str = "";
+                    str += dataGridViewMatrix_SAN.Rows[i].Cells[j].Value;
+                    matrix[i, j] = str;
+                }
+
+            }
+
+            double sum = 0;
+            int k = 0;
+            double srzn = 0;
+            // количество 
+            for (int i = 0; i < rows - 1; i++)
+            {
+                k++;
+            }
+            // сумма 
+            for (int i = 0; i < dataGridViewMatrix_SAN.RowCount; i++)
+            {
+                sum += Convert.ToDouble(dataGridViewMatrix_SAN[7, i].Value);
+            }
+            srzn = (sum / k);
+            srzn = Math.Round(srzn, 3);
+            textBoxSrZnach_SAN.Text = srzn.ToString();
         }
     }  
 }
