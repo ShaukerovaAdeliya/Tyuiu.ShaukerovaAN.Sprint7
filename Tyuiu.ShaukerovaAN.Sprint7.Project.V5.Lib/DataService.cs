@@ -31,6 +31,14 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Lib
             return matrix;
         }
 
-       
+        public double CalculateSrZnach(double[] values, int RowCount)
+        {
+            if (RowCount > 0)
+            {
+                double SrZnach = values.Sum() / RowCount;
+                return Math.Round(SrZnach, 2);
+            }
+            return 0;
+        }
     }
 }

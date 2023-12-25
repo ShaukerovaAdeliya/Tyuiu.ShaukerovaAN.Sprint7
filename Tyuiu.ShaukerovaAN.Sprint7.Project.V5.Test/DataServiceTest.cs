@@ -25,7 +25,7 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test
                 using (var writer = new StreamWriter(filePath, true)) // открытие файла для записи
                 {
                     // Пример добавления строчки 
-                    writer.WriteLine("Начало маршрута; Конец маршрута");
+                   writer.WriteLine("Артикул; Отдел");
                 }
             }
             catch (Exception ex)
@@ -35,6 +35,18 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5.Test
             }
         }
 
+        [TestMethod]
+        public void CheckCalculateSrZnach()
+        {
+            DataService ds = new DataService();
+            double[] valuesSrZnachTest = { 20, 30, 40, 50, 60 };
+            int RowCount = 5;
+            double wait = 40;
+
+            double res = ds.CalculateSrZnach(valuesSrZnachTest, RowCount);
+
+            Assert.AreEqual(wait, res);
+        }
     }
 }
 

@@ -25,6 +25,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         static int rows;
         static int columns;
         static string openFilePath;
+        
+
         DataService ds = new DataService();      
         private void buttonOpenFile_SAN_Click(object sender, EventArgs e)
         {
@@ -65,38 +67,42 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
 
         private void buttonSaveFile_SAN_Click(object sender, EventArgs e)
         {
-            try
+            saveFileDialogMain_SAN.FileName = openFilePath;
+            saveFileDialogMain_SAN.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialogMain_SAN.ShowDialog();
+
+            string path = saveFileDialogMain_SAN.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists)
             {
-                saveFileDialogMain_SAN.FileName = ".csv";
-                saveFileDialogMain_SAN.InitialDirectory = @":L";
-                if (saveFileDialogMain_SAN.ShowDialog() == DialogResult.OK)
-                {
-                    string savepath = saveFileDialogMain_SAN.FileName;
-
-                    if (File.Exists(savepath)) File.Delete(savepath);
-
-                    int rows = dataGridViewMatrix_SAN.RowCount;
-                    int columns = dataGridViewMatrix_SAN.ColumnCount;
-
-                    StringBuilder strBuilder = new StringBuilder();
-
-                    for (int i = 0; i < rows; i++)
-                    {
-                        for (int j = 0; j < columns; j++)
-                        {
-                            strBuilder.Append(dataGridViewMatrix_SAN.Rows[i].Cells[j].Value);
-
-                            if (j != columns - 1) strBuilder.Append(";"); // ???
-                        }
-                        strBuilder.AppendLine();
-                    }
-                    File.WriteAllText(savepath, strBuilder.ToString(), Encoding.GetEncoding(1251));
-                    MessageBox.Show("Файл успешно сохранен", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                File.Delete(path);
             }
-            catch
+
+            int rows = dataGridViewMatrix_SAN.RowCount;
+            int columns = dataGridViewMatrix_SAN.ColumnCount;
+
+            string str = "";
+
+
+
+            for (int i = 0; i < rows; i++)
             {
-                MessageBox.Show("Файл не сохранен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                for (int j = 0; j < columns; j++)
+                {
+                    if (j != columns - 1)
+                    {
+                        str = str + dataGridViewMatrix_SAN.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
+                    {
+                        str = str + dataGridViewMatrix_SAN.Rows[i].Cells[j].Value;
+                    }
+                }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
             }
         }
 
@@ -311,7 +317,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             int sum = 0;
             for (int i = 0; i < dataGridViewMatrix_SAN.Rows.Count; ++i)
             {
-            sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[7].Value);
+                //sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[7].Value);
+                sum += Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[7].Value) * Convert.ToInt32(dataGridViewMatrix_SAN.Rows[i].Cells[5].Value);
             }
             textBoxSumPrice_SAN.Text = sum.ToString();
     
@@ -456,5 +463,5 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
                 }
             }
         }
-    }
+    }  
 }

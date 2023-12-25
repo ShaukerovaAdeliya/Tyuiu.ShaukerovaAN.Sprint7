@@ -31,8 +31,8 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_SAN));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panelTop_SAN = new System.Windows.Forms.Panel();
             this.labelOptovayaBasa_SAN = new System.Windows.Forms.Label();
             this.buttonOProgramme_SAN = new System.Windows.Forms.Button();
@@ -808,10 +808,10 @@ namespace Tyuiu.ShaukerovaAN.Sprint7.Project.V5
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_SAN.BorderlineColor = System.Drawing.SystemColors.Window;
-            chartArea4.Name = "ChartArea1";
-            this.chart_SAN.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart_SAN.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chart_SAN.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart_SAN.Legends.Add(legend1);
             this.chart_SAN.Location = new System.Drawing.Point(8, 6);
             this.chart_SAN.Name = "chart_SAN";
             this.chart_SAN.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
